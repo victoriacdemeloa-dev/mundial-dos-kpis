@@ -1,178 +1,393 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Mundial dos KPIs</title>
 
 <style>
+:root{
+  --azul:#2468c9;
+  --roxo:#8b22b6;
+  --pink:#d0186b;
+  --fundo:#080b18;
+  --card:#151729;
+  --prata:#e8edf7;
+}
+
+*{box-sizing:border-box}
 
 body{
   margin:0;
   font-family:Arial,sans-serif;
-  background:#0f172a;
+  background:
+    linear-gradient(120deg,rgba(208,24,107,.18),rgba(36,104,201,.10)),
+    var(--fundo);
   color:white;
 }
 
-header{
-  background:linear-gradient(135deg,#1e3a8a,#0f172a);
-  padding:30px;
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size:55px 55px;
+  pointer-events:none;
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   text-align:center;
+  padding:30px;
+  position:relative;
+}
+
+.taca{
+  font-size:52px;
+  animation:brilho 2s infinite alternate;
+}
+
+@keyframes brilho{
+  from{filter:drop-shadow(0 0 4px white)}
+  to{filter:drop-shadow(0 0 22px #d0186b)}
 }
 
 h1{
-  margin:0;
-  font-size:32px;
+  font-size:52px;
+  letter-spacing:4px;
+  margin:15px 0;
+  color:var(--prata);
 }
 
-.subtitulo{
-  opacity:0.8;
-  margin-top:10px;
+h1 span{
+  background:linear-gradient(90deg,var(--pink),var(--roxo),var(--azul));
+  -webkit-background-clip:text;
+  color:transparent;
 }
 
-.menu{
-  padding:20px;
-  text-align:center;
+.frase{
+  color:#b9bdd0;
+  font-size:18px;
+  margin-bottom:35px;
+}
+
+.botao{
+  border:0;
+  border-radius:30px;
+  padding:16px 28px;
+  color:white;
+  font-weight:bold;
+  letter-spacing:3px;
+  background:linear-gradient(90deg,var(--pink),var(--roxo),var(--azul));
+  box-shadow:0 0 25px rgba(208,24,107,.45);
+}
+
+.app{
+  padding:25px;
+  position:relative;
+}
+
+.topo{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:20px;
+}
+
+.logo{
+  font-weight:bold;
+  letter-spacing:2px;
+}
+
+.menu-btn{
+  background:var(--card);
+  color:white;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:14px;
+  padding:12px 16px;
+  font-size:18px;
 }
 
 select{
-  padding:10px;
-  border-radius:10px;
+  width:100%;
+  margin:8px 0;
+  padding:14px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.14);
+  background:#202236;
+  color:white;
   font-size:16px;
 }
 
-.secao{
-  padding:20px;
-}
-
 .card{
-  background:#1e293b;
-  border-radius:15px;
-  padding:15px;
-  margin-bottom:15px;
+  background:rgba(21,23,41,.92);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:26px;
+  padding:22px;
+  margin:18px 0;
+  box-shadow:0 20px 40px rgba(0,0,0,.25);
 }
 
-.figurinhas{
+.titulo-card{
+  color:#f2f4ff;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-size:15px;
+  opacity:.9;
+}
+
+.chave{
+  display:grid;
+  gap:12px;
+  margin-top:18px;
+}
+
+.jogo{
+  background:#202236;
+  border-radius:18px;
+  padding:15px;
+  border-left:4px solid var(--pink);
+}
+
+.fase{
+  color:#aeb4c8;
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+.times{
+  font-size:18px;
+  margin-top:6px;
+}
+
+.album{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:10px;
+  gap:14px;
 }
 
 .figurinha{
-  background:white;
-  color:black;
-  border-radius:12px;
+  min-height:210px;
+  background:#e9eef7;
+  color:#111;
+  border-radius:18px;
   padding:10px;
   text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.foto{
+  height:115px;
+  background:linear-gradient(135deg,#cfd6e4,#ffffff);
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.nome{
+  font-weight:bold;
+  font-size:17px;
+}
+
+.info{
+  font-size:13px;
+  opacity:.75;
+}
+
+.numero{
+  position:absolute;
+  top:8px;
+  right:10px;
+  font-weight:bold;
+  font-size:28px;
+  opacity:.25;
 }
 
 .dourada{
-  background:gold;
+  background:linear-gradient(135deg,#fff3a3,#d6a800,#fff0a0);
 }
 
 .glitter{
-  background:linear-gradient(
-    45deg,
-    #ff00ff,
-    #00ffff,
-    #ffff00
-  );
+  background:linear-gradient(135deg,#ff3cac,#784ba0,#2b86c5,#41ffd6);
+  color:white;
 }
 
-</style>
+.glitter:after{
+  content:"✨";
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:42px;
+  opacity:.22;
+}
 
+.hidden{display:none}
+</style>
 </head>
 
 <body>
 
-<header>
-<h1>🏆 Mundial dos KPIs</h1>
-<div class="subtitulo">
-Álbum Oficial da Madrugada
-</div>
-</header>
+<section class="hero" id="inicio">
+  <div>
+    <div class="taca">🏆</div>
+    <h1>MUNDIAL <span>DE KPIs</span></h1>
+    <p class="frase">16 seleções. 16 supervisores. 4 coordenadores. 1 campeão.</p>
+    <button class="botao" onclick="entrar()">🏆 ENTRAR NO MUNDIAL</button>
+  </div>
+</section>
 
-<div class="menu">
+<section class="app" id="app">
 
-<select>
+  <div class="topo">
+    <div class="logo">🏆 MUNDIAL DE KPIs</div>
+    <button class="menu-btn">☰</button>
+  </div>
 
-<option>Capa</option>
+  <select onchange="mostrarPagina(this.value)">
+    <option value="chaveamento">🏆 Chaveamento</option>
+    <option value="brasil">🇧🇷 Brasil</option>
+    <option value="argentina">🇦🇷 Argentina</option>
+    <option value="franca">🇫🇷 França</option>
+    <option value="supervisores">👔 Supervisores</option>
+    <option value="coordenadores">🎯 Coordenadores</option>
+    <option value="gerencia">⚖️ Gerência</option>
+  </select>
 
-<option>Chaveamento</option>
+  <div id="chaveamento" class="pagina">
+    <div class="card">
+      <div class="titulo-card">Área de chaveamento</div>
+      <h2>Mata-mata da Madrugada</h2>
 
-<option>Seleção A</option>
+      <div class="chave">
+        <div class="jogo">
+          <div class="fase">Oitavas</div>
+          <div class="times">🇧🇷 Brasil × 🇦🇷 Argentina</div>
+        </div>
 
-<option>Seleção B</option>
+        <div class="jogo">
+          <div class="fase">Oitavas</div>
+          <div class="times">🇫🇷 França × 🇩🇪 Alemanha</div>
+        </div>
 
-<option>Seleção C</option>
+        <div class="jogo">
+          <div class="fase">Final</div>
+          <div class="times">Vencedor 1 × Vencedor 2</div>
+        </div>
 
-<option>Comissão Técnica</option>
+        <div class="jogo">
+          <div class="fase">Campeão</div>
+          <div class="times">🏆 A definir</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<option>VAR</option>
+  <div id="brasil" class="pagina hidden">
+    <div class="card">
+      <div class="titulo-card">Seleção</div>
+      <h2>🇧🇷 Brasil</h2>
+      <p>Supervisor: Nome do supervisor</p>
 
-<option>Gerência</option>
+      <div class="album">
+        <div class="figurinha">
+          <div class="numero">10</div>
+          <div class="foto">📸</div>
+          <div class="nome">Victoria</div>
+          <div class="info">Camisa 10 · Normal</div>
+        </div>
 
-</select>
+        <div class="figurinha dourada">
+          <div class="numero">01</div>
+          <div class="foto">📸</div>
+          <div class="nome">Dourada</div>
+          <div class="info">Camisa 01 · Rara</div>
+        </div>
 
-</div>
+        <div class="figurinha glitter">
+          <div class="numero">99</div>
+          <div class="foto">📸</div>
+          <div class="nome">Glitter</div>
+          <div class="info">Camisa 99 · Lendária</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class="secao">
+  <div id="argentina" class="pagina hidden">
+    <div class="card">
+      <h2>🇦🇷 Argentina</h2>
+      <p>Figurinhas em construção.</p>
+    </div>
+  </div>
 
-<div class="card">
+  <div id="franca" class="pagina hidden">
+    <div class="card">
+      <h2>🇫🇷 França</h2>
+      <p>Figurinhas em construção.</p>
+    </div>
+  </div>
 
-<h2>⚽ Bem-vinda ao Mundial dos KPIs</h2>
+  <div id="supervisores" class="pagina hidden">
+    <div class="card">
+      <h2>👔 Comissão Técnica</h2>
+      <div class="album">
+        <div class="figurinha dourada">
+          <div class="numero">01</div>
+          <div class="foto">👔</div>
+          <div class="nome">Supervisor 1</div>
+          <div class="info">Comissão Técnica</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<p>
-Primeira temporada oficial.
-</p>
+  <div id="coordenadores" class="pagina hidden">
+    <div class="card">
+      <h2>🎯 VAR</h2>
+      <p>4 coordenadores do Mundial.</p>
+    </div>
+  </div>
 
-</div>
+  <div id="gerencia" class="pagina hidden">
+    <div class="card">
+      <h2>⚖️ Juiz Principal</h2>
+      <div class="album">
+        <div class="figurinha glitter">
+          <div class="numero">00</div>
+          <div class="foto">⚖️</div>
+          <div class="nome">Gerência</div>
+          <div class="info">Figurinha lendária</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class="card">
+</section>
 
-<h2>⭐ Exemplos de Figurinhas</h2>
+<script>
+function entrar(){
+  document.getElementById("app").scrollIntoView({behavior:"smooth"});
+}
 
-<div class="figurinhas">
-
-<div class="figurinha">
-📸<br>
-Victoria<br>
-Camisa 10
-</div>
-
-<div class="figurinha dourada">
-🥇<br>
-Supervisor<br>
-Camisa 01
-</div>
-
-<div class="figurinha glitter">
-✨<br>
-Lenda da Madrugada<br>
-Camisa 99
-</div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>🏆 Chaveamento</h2>
-
-<p>
-
-Seleção A × Seleção B<br><br>
-
-Seleção C × Seleção D
-
-</p>
-
-</div>
-
-</div>
+function mostrarPagina(id){
+  const paginas = document.querySelectorAll(".pagina");
+  paginas.forEach(pagina => pagina.classList.add("hidden"));
+  document.getElementById(id).classList.remove("hidden");
+}
+</script>
 
 </body>
 </html>
