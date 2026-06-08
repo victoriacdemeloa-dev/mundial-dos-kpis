@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mundial dos KPIs</title>
+
 <style>
 :root{
   --pink:#d0186b;
@@ -15,7 +16,9 @@
   --texto:#f4f6ff;
   --muted:#a9aec4;
 }
+
 *{box-sizing:border-box}
+
 body{
   margin:0;
   font-family:Arial,sans-serif;
@@ -24,6 +27,7 @@ body{
     var(--fundo);
   color:var(--texto);
 }
+
 body:before{
   content:"";
   position:fixed;
@@ -34,39 +38,52 @@ body:before{
   background-size:58px 58px;
   pointer-events:none;
 }
+
 .tela{
   min-height:100vh;
   padding:34px 26px;
   position:relative;
 }
+
 .capa{
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
 }
+
 .taca{
   font-size:54px;
   filter:drop-shadow(0 0 18px rgba(255,255,255,.45));
   margin-bottom:24px;
+  animation:pulse 2.2s infinite alternate;
 }
+
+@keyframes pulse{
+  from{transform:scale(1)}
+  to{transform:scale(1.08)}
+}
+
 h1{
   font-size:58px;
   line-height:.95;
   margin:0;
   letter-spacing:5px;
 }
+
 .gradiente{
   background:linear-gradient(90deg,var(--pink),var(--roxo),var(--azul));
   -webkit-background-clip:text;
   color:transparent;
 }
+
 .frase{
   color:var(--muted);
   font-size:21px;
   line-height:1.35;
   margin:28px 0 42px;
 }
+
 .botao{
   border:0;
   border-radius:40px;
@@ -79,18 +96,28 @@ h1{
   background:linear-gradient(90deg,var(--pink),var(--roxo),var(--azul));
   box-shadow:0 0 26px rgba(208,24,107,.38);
 }
+
+.botao:active,
+.navBtn:active,
+.card:active{
+  transform:scale(.97);
+}
+
 .hidden{display:none}
+
 .topo{
   display:flex;
   justify-content:space-between;
   align-items:center;
   margin-bottom:24px;
 }
+
 .logo{
   font-weight:900;
   letter-spacing:4px;
   font-size:18px;
 }
+
 .menuBtn{
   width:66px;
   height:66px;
@@ -100,13 +127,17 @@ h1{
   color:white;
   font-size:28px;
 }
+
 .painelMenu{
   background:rgba(21,23,41,.96);
   border:1px solid rgba(255,255,255,.13);
   border-radius:26px;
   padding:18px;
   margin-bottom:22px;
+  backdrop-filter:blur(8px);
+  animation:fadeUp .35s ease;
 }
+
 .grupoTitulo{
   color:var(--muted);
   letter-spacing:4px;
@@ -115,11 +146,13 @@ h1{
   margin:12px 0;
   text-transform:uppercase;
 }
+
 .botoes{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:10px;
 }
+
 .navBtn{
   border:1px solid rgba(255,255,255,.13);
   background:#202236;
@@ -128,50 +161,94 @@ h1{
   padding:13px;
   text-align:left;
   font-size:15px;
+  transition:.22s ease;
 }
+
 .navBtn.full{grid-column:1/-1}
+
+.navBtn:hover{
+  transform:translateY(-3px);
+  border-color:rgba(255,255,255,.3);
+}
+
 .card{
   background:rgba(21,23,41,.92);
   border:1px solid rgba(255,255,255,.13);
   border-radius:28px;
   padding:24px;
   margin:18px 0;
+  backdrop-filter:blur(8px);
+  box-shadow:0 8px 30px rgba(0,0,0,.25);
+  transition:.22s ease;
 }
+
+.card:hover{
+  transform:translateY(-4px);
+}
+
+.pagina{
+  animation:fadeUp .4s ease;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(16px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
 .kicker{
   color:#d9def2;
   letter-spacing:5px;
   font-size:14px;
   text-transform:uppercase;
 }
+
 .card h2{
   font-size:34px;
   margin:16px 0 20px;
 }
+
+.card p{
+  color:var(--muted);
+  line-height:1.45;
+  font-size:17px;
+}
+
 .chaveGrid{
   display:grid;
   gap:14px;
 }
+
 .jogo{
   background:#202236;
   border-left:5px solid var(--pink);
   padding:18px;
   border-radius:0 22px 22px 0;
 }
+
 .fase{
   color:var(--muted);
   letter-spacing:4px;
   font-size:13px;
   text-transform:uppercase;
 }
+
 .times{
   margin-top:10px;
   font-size:21px;
 }
+
 .album{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:16px;
 }
+
 .slot{
   border:1px dashed rgba(255,255,255,.18);
   background:rgba(255,255,255,.04);
@@ -211,6 +288,7 @@ h1{
 
     <div class="grupoTitulo">Seleções</div>
     <div class="botoes">
+      <button class="navBtn" onclick="mostrar('camaroes')">🇨🇲 Camarões</button>
       <button class="navBtn" onclick="mostrar('brasil')">🇧🇷 Brasil</button>
       <button class="navBtn" onclick="mostrar('argentina')">🇦🇷 Argentina</button>
       <button class="navBtn" onclick="mostrar('franca')">🇫🇷 França</button>
@@ -221,10 +299,9 @@ h1{
       <button class="navBtn" onclick="mostrar('japao')">🇯🇵 Japão</button>
       <button class="navBtn" onclick="mostrar('mexico')">🇲🇽 México</button>
       <button class="navBtn" onclick="mostrar('uruguai')">🇺🇾 Uruguai</button>
-      <button class="navBtn" onclick="mostrar('inglaterra')">🏴 Inglaterra</button>
+      <button class="navBtn" onclick="mostrar('inglaterra')">🇬🇧 Inglaterra</button>
       <button class="navBtn" onclick="mostrar('holanda')">🇳🇱 Holanda</button>
       <button class="navBtn" onclick="mostrar('croacia')">🇭🇷 Croácia</button>
-      <button class="navBtn" onclick="mostrar('marrocos')">🇲🇦 Marrocos</button>
       <button class="navBtn" onclick="mostrar('coreia')">🇰🇷 Coreia</button>
       <button class="navBtn" onclick="mostrar('eua')">🇺🇸 EUA</button>
     </div>
@@ -235,37 +312,72 @@ h1{
       <div class="kicker">Área de chaveamento</div>
       <h2>Mata-mata da Madrugada</h2>
       <div class="chaveGrid">
-        <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇧🇷 Brasil × 🇦🇷 Argentina</div></div>
-        <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇫🇷 França × 🇩🇪 Alemanha</div></div>
-        <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇪🇸 Espanha × 🇵🇹 Portugal</div></div>
-        <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇮🇹 Itália × 🇯🇵 Japão</div></div>
-        <div class="jogo"><div class="fase">Quartas</div><div class="times">Vencedor 1 × Vencedor 2</div></div>
+        <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇨🇲 Camarões × 🇧🇷 Brasil</div></div>
+        <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇦🇷 Argentina × 🇫🇷 França</div></div>
+        <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇩🇪 Alemanha × 🇪🇸 Espanha</div></div>
+        <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇵🇹 Portugal × 🇮🇹 Itália</div></div>
+        <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇯🇵 Japão × 🇲🇽 México</div></div>
+        <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇺🇾 Uruguai × 🇬🇧 Inglaterra</div></div>
+        <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇳🇱 Holanda × 🇭🇷 Croácia</div></div>
+        <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇰🇷 Coreia × 🇺🇸 EUA</div></div>
+        <div class="jogo"><div class="fase">Quartas</div><div class="times">Vencedores das oitavas</div></div>
         <div class="jogo"><div class="fase">Semifinal</div><div class="times">A definir × A definir</div></div>
         <div class="jogo"><div class="fase">Final</div><div class="times">🏆 A definir</div></div>
       </div>
     </div>
   </div>
 
-  <div id="supervisores" class="pagina hidden"><div class="card"><div class="kicker">Comissão técnica</div><h2>👔 Supervisores</h2><p>16 supervisores serão cadastrados aqui.</p></div></div>
-  <div id="coordenadores" class="pagina hidden"><div class="card"><div class="kicker">VAR</div><h2>🎯 Coordenadores</h2><p>4 coordenadores serão cadastrados aqui.</p></div></div>
-  <div id="gerencia" class="pagina hidden"><div class="card"><div class="kicker">Juiz principal</div><h2>⚖️ Gerência</h2><p>Figurinha lendária da gerência.</p></div></div>
+  <div id="supervisores" class="pagina hidden">
+    <div class="card">
+      <div class="kicker">Comissão técnica</div>
+      <h2>👔 Supervisores</h2>
+      <p>Os estrategistas por trás das seleções.</p>
+    </div>
+  </div>
 
-  <div id="brasil" class="pagina hidden"><div class="card"><div class="kicker">Seleção</div><h2>🇧🇷 Brasil</h2><div class="album"><div class="slot">Figurinhas em breve</div><div class="slot">Foto + nome + camisa</div></div></div></div>
-  <div id="argentina" class="pagina hidden"><div class="card"><h2>🇦🇷 Argentina</h2><p>Figurinhas em breve.</p></div></div>
-  <div id="franca" class="pagina hidden"><div class="card"><h2>🇫🇷 França</h2><p>Figurinhas em breve.</p></div></div>
-  <div id="alemanha" class="pagina hidden"><div class="card"><h2>🇩🇪 Alemanha</h2><p>Figurinhas em breve.</p></div></div>
-  <div id="espanha" class="pagina hidden"><div class="card"><h2>🇪🇸 Espanha</h2><p>Figurinhas em breve.</p></div></div>
-  <div id="portugal" class="pagina hidden"><div class="card"><h2>🇵🇹 Portugal</h2><p>Figurinhas em breve.</p></div></div>
-  <div id="italia" class="pagina hidden"><div class="card"><h2>🇮🇹 Itália</h2><p>Figurinhas em breve.</p></div></div>
-  <div id="japao" class="pagina hidden"><div class="card"><h2>🇯🇵 Japão</h2><p>Figurinhas em breve.</p></div></div>
-  <div id="mexico" class="pagina hidden"><div class="card"><h2>🇲🇽 México</h2><p>Figurinhas em breve.</p></div></div>
-  <div id="uruguai" class="pagina hidden"><div class="card"><h2>🇺🇾 Uruguai</h2><p>Figurinhas em breve.</p></div></div>
-  <div id="inglaterra" class="pagina hidden"><div class="card"><h2>🏴 Inglaterra</h2><p>Figurinhas em breve.</p></div></div>
-  <div id="holanda" class="pagina hidden"><div class="card"><h2>🇳🇱 Holanda</h2><p>Figurinhas em breve.</p></div></div>
-  <div id="croacia" class="pagina hidden"><div class="card"><h2>🇭🇷 Croácia</h2><p>Figurinhas em breve.</p></div></div>
-  <div id="marrocos" class="pagina hidden"><div class="card"><h2>🇲🇦 Marrocos</h2><p>Figurinhas em breve.</p></div></div>
-  <div id="coreia" class="pagina hidden"><div class="card"><h2>🇰🇷 Coreia</h2><p>Figurinhas em breve.</p></div></div>
-  <div id="eua" class="pagina hidden"><div class="card"><h2>🇺🇸 EUA</h2><p>Figurinhas em breve.</p></div></div>
+  <div id="coordenadores" class="pagina hidden">
+    <div class="card">
+      <div class="kicker">VAR</div>
+      <h2>🎯 Coordenadores</h2>
+      <p>Responsáveis por escalar craques, administrar crises e tomar decisões críticas durante o campeonato.</p>
+    </div>
+  </div>
+
+  <div id="gerencia" class="pagina hidden">
+    <div class="card">
+      <div class="kicker">Juiz principal</div>
+      <h2>⚖️ Gerência</h2>
+      <p>Aquele que tudo sabe e tudo vê.</p>
+    </div>
+  </div>
+
+  <div id="camaroes" class="pagina hidden">
+    <div class="card">
+      <div class="kicker">Seleção</div>
+      <h2>🇨🇲 Camarões</h2>
+      <p>Seleção em preparação.</p>
+      <div class="album">
+        <div class="slot">Figurinhas em breve</div>
+        <div class="slot">Supervisor + Coordenador</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="brasil" class="pagina hidden"><div class="card"><h2>🇧🇷 Brasil</h2><p>🚧 Seleção em preparação.</p></div></div>
+  <div id="argentina" class="pagina hidden"><div class="card"><h2>🇦🇷 Argentina</h2><p>🚧 Seleção em preparação.</p></div></div>
+  <div id="franca" class="pagina hidden"><div class="card"><h2>🇫🇷 França</h2><p>🚧 Seleção em preparação.</p></div></div>
+  <div id="alemanha" class="pagina hidden"><div class="card"><h2>🇩🇪 Alemanha</h2><p>🚧 Seleção em preparação.</p></div></div>
+  <div id="espanha" class="pagina hidden"><div class="card"><h2>🇪🇸 Espanha</h2><p>🚧 Seleção em preparação.</p></div></div>
+  <div id="portugal" class="pagina hidden"><div class="card"><h2>🇵🇹 Portugal</h2><p>🚧 Seleção em preparação.</p></div></div>
+  <div id="italia" class="pagina hidden"><div class="card"><h2>🇮🇹 Itália</h2><p>🚧 Seleção em preparação.</p></div></div>
+  <div id="japao" class="pagina hidden"><div class="card"><h2>🇯🇵 Japão</h2><p>🚧 Seleção em preparação.</p></div></div>
+  <div id="mexico" class="pagina hidden"><div class="card"><h2>🇲🇽 México</h2><p>🚧 Seleção em preparação.</p></div></div>
+  <div id="uruguai" class="pagina hidden"><div class="card"><h2>🇺🇾 Uruguai</h2><p>🚧 Seleção em preparação.</p></div></div>
+  <div id="inglaterra" class="pagina hidden"><div class="card"><h2>🇬🇧 Inglaterra</h2><p>🚧 Seleção em preparação.</p></div></div>
+  <div id="holanda" class="pagina hidden"><div class="card"><h2>🇳🇱 Holanda</h2><p>🚧 Seleção em preparação.</p></div></div>
+  <div id="croacia" class="pagina hidden"><div class="card"><h2>🇭🇷 Croácia</h2><p>🚧 Seleção em preparação.</p></div></div>
+  <div id="coreia" class="pagina hidden"><div class="card"><h2>🇰🇷 Coreia do Sul</h2><p>🚧 Seleção em preparação.</p></div></div>
+  <div id="eua" class="pagina hidden"><div class="card"><h2>🇺🇸 Estados Unidos</h2><p>🚧 Seleção em preparação.</p></div></div>
 
 </section>
 
