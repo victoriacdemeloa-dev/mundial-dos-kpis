@@ -4,388 +4,286 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mundial dos KPIs</title>
-
 <style>
 :root{
-  --azul:#2468c9;
-  --roxo:#8b22b6;
   --pink:#d0186b;
+  --roxo:#8b22b6;
+  --azul:#2468c9;
   --fundo:#080b18;
   --card:#151729;
-  --prata:#e8edf7;
+  --linha:rgba(255,255,255,.08);
+  --texto:#f4f6ff;
+  --muted:#a9aec4;
 }
-
 *{box-sizing:border-box}
-
 body{
   margin:0;
   font-family:Arial,sans-serif;
   background:
-    linear-gradient(120deg,rgba(208,24,107,.18),rgba(36,104,201,.10)),
+    linear-gradient(120deg,rgba(208,24,107,.18),rgba(36,104,201,.12)),
     var(--fundo);
-  color:white;
+  color:var(--texto);
 }
-
 body:before{
   content:"";
   position:fixed;
   inset:0;
   background-image:
-    linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
-  background-size:55px 55px;
+    linear-gradient(var(--linha) 1px,transparent 1px),
+    linear-gradient(90deg,var(--linha) 1px,transparent 1px);
+  background-size:58px 58px;
   pointer-events:none;
 }
-
-.hero{
+.tela{
   min-height:100vh;
+  padding:34px 26px;
+  position:relative;
+}
+.capa{
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:30px;
-  position:relative;
 }
-
 .taca{
-  font-size:52px;
-  animation:brilho 2s infinite alternate;
+  font-size:54px;
+  filter:drop-shadow(0 0 18px rgba(255,255,255,.45));
+  margin-bottom:24px;
 }
-
-@keyframes brilho{
-  from{filter:drop-shadow(0 0 4px white)}
-  to{filter:drop-shadow(0 0 22px #d0186b)}
-}
-
 h1{
-  font-size:52px;
-  letter-spacing:4px;
-  margin:15px 0;
-  color:var(--prata);
+  font-size:58px;
+  line-height:.95;
+  margin:0;
+  letter-spacing:5px;
 }
-
-h1 span{
+.gradiente{
   background:linear-gradient(90deg,var(--pink),var(--roxo),var(--azul));
   -webkit-background-clip:text;
   color:transparent;
 }
-
 .frase{
-  color:#b9bdd0;
-  font-size:18px;
-  margin-bottom:35px;
+  color:var(--muted);
+  font-size:21px;
+  line-height:1.35;
+  margin:28px 0 42px;
 }
-
 .botao{
   border:0;
-  border-radius:30px;
-  padding:16px 28px;
+  border-radius:40px;
+  padding:18px 28px;
+  width:100%;
+  max-width:420px;
   color:white;
-  font-weight:bold;
-  letter-spacing:3px;
+  font-weight:800;
+  letter-spacing:4px;
   background:linear-gradient(90deg,var(--pink),var(--roxo),var(--azul));
-  box-shadow:0 0 25px rgba(208,24,107,.45);
+  box-shadow:0 0 26px rgba(208,24,107,.38);
 }
-
-.app{
-  padding:25px;
-  position:relative;
-}
-
+.hidden{display:none}
 .topo{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:12px;
-  margin-bottom:20px;
+  margin-bottom:24px;
 }
-
 .logo{
-  font-weight:bold;
-  letter-spacing:2px;
-}
-
-.menu-btn{
-  background:var(--card);
-  color:white;
-  border:1px solid rgba(255,255,255,.15);
-  border-radius:14px;
-  padding:12px 16px;
+  font-weight:900;
+  letter-spacing:4px;
   font-size:18px;
 }
-
-select{
-  width:100%;
-  margin:8px 0;
-  padding:14px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,.14);
+.menuBtn{
+  width:66px;
+  height:66px;
+  border-radius:24px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(21,23,41,.95);
+  color:white;
+  font-size:28px;
+}
+.painelMenu{
+  background:rgba(21,23,41,.96);
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:26px;
+  padding:18px;
+  margin-bottom:22px;
+}
+.grupoTitulo{
+  color:var(--muted);
+  letter-spacing:4px;
+  font-weight:bold;
+  font-size:13px;
+  margin:12px 0;
+  text-transform:uppercase;
+}
+.botoes{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.navBtn{
+  border:1px solid rgba(255,255,255,.13);
   background:#202236;
   color:white;
-  font-size:16px;
+  border-radius:16px;
+  padding:13px;
+  text-align:left;
+  font-size:15px;
 }
-
+.navBtn.full{grid-column:1/-1}
 .card{
   background:rgba(21,23,41,.92);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:26px;
-  padding:22px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:28px;
+  padding:24px;
   margin:18px 0;
-  box-shadow:0 20px 40px rgba(0,0,0,.25);
 }
-
-.titulo-card{
-  color:#f2f4ff;
-  letter-spacing:2px;
+.kicker{
+  color:#d9def2;
+  letter-spacing:5px;
+  font-size:14px;
   text-transform:uppercase;
-  font-size:15px;
-  opacity:.9;
 }
-
-.chave{
+.card h2{
+  font-size:34px;
+  margin:16px 0 20px;
+}
+.chaveGrid{
   display:grid;
-  gap:12px;
-  margin-top:18px;
+  gap:14px;
 }
-
 .jogo{
   background:#202236;
-  border-radius:18px;
-  padding:15px;
-  border-left:4px solid var(--pink);
+  border-left:5px solid var(--pink);
+  padding:18px;
+  border-radius:0 22px 22px 0;
 }
-
 .fase{
-  color:#aeb4c8;
+  color:var(--muted);
+  letter-spacing:4px;
   font-size:13px;
   text-transform:uppercase;
-  letter-spacing:2px;
 }
-
 .times{
-  font-size:18px;
-  margin-top:6px;
+  margin-top:10px;
+  font-size:21px;
 }
-
 .album{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:14px;
+  gap:16px;
 }
-
-.figurinha{
-  min-height:210px;
-  background:#e9eef7;
-  color:#111;
-  border-radius:18px;
-  padding:10px;
+.slot{
+  border:1px dashed rgba(255,255,255,.18);
+  background:rgba(255,255,255,.04);
+  border-radius:20px;
+  padding:20px;
   text-align:center;
-  position:relative;
-  overflow:hidden;
+  color:var(--muted);
 }
-
-.foto{
-  height:115px;
-  background:linear-gradient(135deg,#cfd6e4,#ffffff);
-  border-radius:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:42px;
-  margin-bottom:10px;
-}
-
-.nome{
-  font-weight:bold;
-  font-size:17px;
-}
-
-.info{
-  font-size:13px;
-  opacity:.75;
-}
-
-.numero{
-  position:absolute;
-  top:8px;
-  right:10px;
-  font-weight:bold;
-  font-size:28px;
-  opacity:.25;
-}
-
-.dourada{
-  background:linear-gradient(135deg,#fff3a3,#d6a800,#fff0a0);
-}
-
-.glitter{
-  background:linear-gradient(135deg,#ff3cac,#784ba0,#2b86c5,#41ffd6);
-  color:white;
-}
-
-.glitter:after{
-  content:"✨";
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:42px;
-  opacity:.22;
-}
-
-.hidden{display:none}
 </style>
 </head>
 
 <body>
 
-<section class="hero" id="inicio">
+<section id="capa" class="tela capa">
   <div>
     <div class="taca">🏆</div>
-    <h1>MUNDIAL <span>DE KPIs</span></h1>
-    <p class="frase">16 seleções. 16 supervisores. 4 coordenadores. 1 campeão.</p>
+    <h1>MUNDIAL<br><span class="gradiente">DE KPIs</span></h1>
+    <p class="frase">16 seleções. 16 supervisores.<br>4 coordenadores. 1 campeão.</p>
     <button class="botao" onclick="entrar()">🏆 ENTRAR NO MUNDIAL</button>
   </div>
 </section>
 
-<section class="app" id="app">
-
+<section id="album" class="tela hidden">
   <div class="topo">
     <div class="logo">🏆 MUNDIAL DE KPIs</div>
-    <button class="menu-btn">☰</button>
+    <button class="menuBtn" onclick="abrirMenu()">☰</button>
   </div>
 
-  <select onchange="mostrarPagina(this.value)">
-    <option value="chaveamento">🏆 Chaveamento</option>
-    <option value="brasil">🇧🇷 Brasil</option>
-    <option value="argentina">🇦🇷 Argentina</option>
-    <option value="franca">🇫🇷 França</option>
-    <option value="supervisores">👔 Supervisores</option>
-    <option value="coordenadores">🎯 Coordenadores</option>
-    <option value="gerencia">⚖️ Gerência</option>
-  </select>
+  <div id="menu" class="painelMenu hidden">
+    <div class="grupoTitulo">Navegação</div>
+    <div class="botoes">
+      <button class="navBtn full" onclick="mostrar('chaveamento')">🏆 Chaveamento</button>
+      <button class="navBtn full" onclick="mostrar('supervisores')">👔 Supervisores</button>
+      <button class="navBtn full" onclick="mostrar('coordenadores')">🎯 Coordenadores</button>
+      <button class="navBtn full" onclick="mostrar('gerencia')">⚖️ Gerência</button>
+    </div>
+
+    <div class="grupoTitulo">Seleções</div>
+    <div class="botoes">
+      <button class="navBtn" onclick="mostrar('brasil')">🇧🇷 Brasil</button>
+      <button class="navBtn" onclick="mostrar('argentina')">🇦🇷 Argentina</button>
+      <button class="navBtn" onclick="mostrar('franca')">🇫🇷 França</button>
+      <button class="navBtn" onclick="mostrar('alemanha')">🇩🇪 Alemanha</button>
+      <button class="navBtn" onclick="mostrar('espanha')">🇪🇸 Espanha</button>
+      <button class="navBtn" onclick="mostrar('portugal')">🇵🇹 Portugal</button>
+      <button class="navBtn" onclick="mostrar('italia')">🇮🇹 Itália</button>
+      <button class="navBtn" onclick="mostrar('japao')">🇯🇵 Japão</button>
+      <button class="navBtn" onclick="mostrar('mexico')">🇲🇽 México</button>
+      <button class="navBtn" onclick="mostrar('uruguai')">🇺🇾 Uruguai</button>
+      <button class="navBtn" onclick="mostrar('inglaterra')">🏴 Inglaterra</button>
+      <button class="navBtn" onclick="mostrar('holanda')">🇳🇱 Holanda</button>
+      <button class="navBtn" onclick="mostrar('croacia')">🇭🇷 Croácia</button>
+      <button class="navBtn" onclick="mostrar('marrocos')">🇲🇦 Marrocos</button>
+      <button class="navBtn" onclick="mostrar('coreia')">🇰🇷 Coreia</button>
+      <button class="navBtn" onclick="mostrar('eua')">🇺🇸 EUA</button>
+    </div>
+  </div>
 
   <div id="chaveamento" class="pagina">
     <div class="card">
-      <div class="titulo-card">Área de chaveamento</div>
+      <div class="kicker">Área de chaveamento</div>
       <h2>Mata-mata da Madrugada</h2>
-
-      <div class="chave">
-        <div class="jogo">
-          <div class="fase">Oitavas</div>
-          <div class="times">🇧🇷 Brasil × 🇦🇷 Argentina</div>
-        </div>
-
-        <div class="jogo">
-          <div class="fase">Oitavas</div>
-          <div class="times">🇫🇷 França × 🇩🇪 Alemanha</div>
-        </div>
-
-        <div class="jogo">
-          <div class="fase">Final</div>
-          <div class="times">Vencedor 1 × Vencedor 2</div>
-        </div>
-
-        <div class="jogo">
-          <div class="fase">Campeão</div>
-          <div class="times">🏆 A definir</div>
-        </div>
+      <div class="chaveGrid">
+        <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇧🇷 Brasil × 🇦🇷 Argentina</div></div>
+        <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇫🇷 França × 🇩🇪 Alemanha</div></div>
+        <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇪🇸 Espanha × 🇵🇹 Portugal</div></div>
+        <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇮🇹 Itália × 🇯🇵 Japão</div></div>
+        <div class="jogo"><div class="fase">Quartas</div><div class="times">Vencedor 1 × Vencedor 2</div></div>
+        <div class="jogo"><div class="fase">Semifinal</div><div class="times">A definir × A definir</div></div>
+        <div class="jogo"><div class="fase">Final</div><div class="times">🏆 A definir</div></div>
       </div>
     </div>
   </div>
 
-  <div id="brasil" class="pagina hidden">
-    <div class="card">
-      <div class="titulo-card">Seleção</div>
-      <h2>🇧🇷 Brasil</h2>
-      <p>Supervisor: Nome do supervisor</p>
+  <div id="supervisores" class="pagina hidden"><div class="card"><div class="kicker">Comissão técnica</div><h2>👔 Supervisores</h2><p>16 supervisores serão cadastrados aqui.</p></div></div>
+  <div id="coordenadores" class="pagina hidden"><div class="card"><div class="kicker">VAR</div><h2>🎯 Coordenadores</h2><p>4 coordenadores serão cadastrados aqui.</p></div></div>
+  <div id="gerencia" class="pagina hidden"><div class="card"><div class="kicker">Juiz principal</div><h2>⚖️ Gerência</h2><p>Figurinha lendária da gerência.</p></div></div>
 
-      <div class="album">
-        <div class="figurinha">
-          <div class="numero">10</div>
-          <div class="foto">📸</div>
-          <div class="nome">Victoria</div>
-          <div class="info">Camisa 10 · Normal</div>
-        </div>
-
-        <div class="figurinha dourada">
-          <div class="numero">01</div>
-          <div class="foto">📸</div>
-          <div class="nome">Dourada</div>
-          <div class="info">Camisa 01 · Rara</div>
-        </div>
-
-        <div class="figurinha glitter">
-          <div class="numero">99</div>
-          <div class="foto">📸</div>
-          <div class="nome">Glitter</div>
-          <div class="info">Camisa 99 · Lendária</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="argentina" class="pagina hidden">
-    <div class="card">
-      <h2>🇦🇷 Argentina</h2>
-      <p>Figurinhas em construção.</p>
-    </div>
-  </div>
-
-  <div id="franca" class="pagina hidden">
-    <div class="card">
-      <h2>🇫🇷 França</h2>
-      <p>Figurinhas em construção.</p>
-    </div>
-  </div>
-
-  <div id="supervisores" class="pagina hidden">
-    <div class="card">
-      <h2>👔 Comissão Técnica</h2>
-      <div class="album">
-        <div class="figurinha dourada">
-          <div class="numero">01</div>
-          <div class="foto">👔</div>
-          <div class="nome">Supervisor 1</div>
-          <div class="info">Comissão Técnica</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="coordenadores" class="pagina hidden">
-    <div class="card">
-      <h2>🎯 VAR</h2>
-      <p>4 coordenadores do Mundial.</p>
-    </div>
-  </div>
-
-  <div id="gerencia" class="pagina hidden">
-    <div class="card">
-      <h2>⚖️ Juiz Principal</h2>
-      <div class="album">
-        <div class="figurinha glitter">
-          <div class="numero">00</div>
-          <div class="foto">⚖️</div>
-          <div class="nome">Gerência</div>
-          <div class="info">Figurinha lendária</div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div id="brasil" class="pagina hidden"><div class="card"><div class="kicker">Seleção</div><h2>🇧🇷 Brasil</h2><div class="album"><div class="slot">Figurinhas em breve</div><div class="slot">Foto + nome + camisa</div></div></div></div>
+  <div id="argentina" class="pagina hidden"><div class="card"><h2>🇦🇷 Argentina</h2><p>Figurinhas em breve.</p></div></div>
+  <div id="franca" class="pagina hidden"><div class="card"><h2>🇫🇷 França</h2><p>Figurinhas em breve.</p></div></div>
+  <div id="alemanha" class="pagina hidden"><div class="card"><h2>🇩🇪 Alemanha</h2><p>Figurinhas em breve.</p></div></div>
+  <div id="espanha" class="pagina hidden"><div class="card"><h2>🇪🇸 Espanha</h2><p>Figurinhas em breve.</p></div></div>
+  <div id="portugal" class="pagina hidden"><div class="card"><h2>🇵🇹 Portugal</h2><p>Figurinhas em breve.</p></div></div>
+  <div id="italia" class="pagina hidden"><div class="card"><h2>🇮🇹 Itália</h2><p>Figurinhas em breve.</p></div></div>
+  <div id="japao" class="pagina hidden"><div class="card"><h2>🇯🇵 Japão</h2><p>Figurinhas em breve.</p></div></div>
+  <div id="mexico" class="pagina hidden"><div class="card"><h2>🇲🇽 México</h2><p>Figurinhas em breve.</p></div></div>
+  <div id="uruguai" class="pagina hidden"><div class="card"><h2>🇺🇾 Uruguai</h2><p>Figurinhas em breve.</p></div></div>
+  <div id="inglaterra" class="pagina hidden"><div class="card"><h2>🏴 Inglaterra</h2><p>Figurinhas em breve.</p></div></div>
+  <div id="holanda" class="pagina hidden"><div class="card"><h2>🇳🇱 Holanda</h2><p>Figurinhas em breve.</p></div></div>
+  <div id="croacia" class="pagina hidden"><div class="card"><h2>🇭🇷 Croácia</h2><p>Figurinhas em breve.</p></div></div>
+  <div id="marrocos" class="pagina hidden"><div class="card"><h2>🇲🇦 Marrocos</h2><p>Figurinhas em breve.</p></div></div>
+  <div id="coreia" class="pagina hidden"><div class="card"><h2>🇰🇷 Coreia</h2><p>Figurinhas em breve.</p></div></div>
+  <div id="eua" class="pagina hidden"><div class="card"><h2>🇺🇸 EUA</h2><p>Figurinhas em breve.</p></div></div>
 
 </section>
 
 <script>
 function entrar(){
-  document.getElementById("app").scrollIntoView({behavior:"smooth"});
+  document.getElementById("capa").classList.add("hidden");
+  document.getElementById("album").classList.remove("hidden");
 }
 
-function mostrarPagina(id){
-  const paginas = document.querySelectorAll(".pagina");
-  paginas.forEach(pagina => pagina.classList.add("hidden"));
+function abrirMenu(){
+  document.getElementById("menu").classList.toggle("hidden");
+}
+
+function mostrar(id){
+  document.querySelectorAll(".pagina").forEach(p => p.classList.add("hidden"));
   document.getElementById(id).classList.remove("hidden");
+  document.getElementById("menu").classList.add("hidden");
+  window.scrollTo({top:0,behavior:"smooth"});
 }
 </script>
 
