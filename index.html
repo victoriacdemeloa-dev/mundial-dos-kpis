@@ -197,7 +197,7 @@ h1{
 }
 .album{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:16px;
 }
 
@@ -205,29 +205,32 @@ h1{
   background:linear-gradient(160deg,#202236,#111427);
   border:1px solid rgba(255,255,255,.16);
   border-radius:24px;
-  padding:10px;
+  padding:14px;
   text-align:center;
   color:#f4f6ff;
-  min-height:380px;
+  min-height:auto;
   box-shadow:0 12px 28px rgba(0,0,0,.35);
   overflow:hidden;
 }
 
 .slot img{
   width:100% !important;
-  height:210px !important;
+  height:170px !important;
   object-fit:cover !important;
   object-position:center top !important;
-  border-radius:18px !important;
+  border-radius:14px !important;
   margin-bottom:14px !important;
 }
 
 .slot strong{
-  display:block;
-  color:white;
-  font-size:18px;
-  line-height:1.05;
-  letter-spacing:1px;
+    display:block;
+    color:white;
+    font-size:16px;
+    line-height:1.2;
+    letter-spacing:0px;
+    margin-top:8px;
+    margin-bottom:8px;
+}
 }
 .destaque{
   border-left:5px solid var(--azul);
