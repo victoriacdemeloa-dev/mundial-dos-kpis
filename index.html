@@ -284,7 +284,184 @@ h1{
 .juiz{
   border-left:5px solid var(--pink);
 }
-</style>
+.sticker{
+  position:relative;
+  padding:14px;
+  border-radius:30px;
+  overflow:hidden;
+  color:white;
+  min-height:620px;
+  border:3px solid rgba(255,215,130,.85);
+  box-shadow:0 0 35px rgba(0,0,0,.55);
+}
+
+.sticker:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,255,255,.45),transparent 18%),
+    linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);
+  opacity:.45;
+  pointer-events:none;
+}
+
+.sticker-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+
+.rarity-label{
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+.shirt-number{
+  font-size:44px;
+  font-weight:900;
+  color:#fff3c4;
+}
+
+.sticker-photo{
+  position:relative;
+  z-index:2;
+  height:285px;
+  border-radius:22px;
+  overflow:hidden;
+  margin:12px 0 18px;
+  border:2px solid rgba(255,230,160,.7);
+}
+
+.sticker-photo img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  object-position:center 18% !important;
+  border-radius:0 !important;
+  margin:0 !important;
+}
+
+.sticker-name{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  line-height:.9;
+  margin:16px 0 8px;
+}
+
+.sticker-name span{
+  display:block;
+  font-size:42px;
+  font-weight:900;
+  color:#ffe8a3;
+}
+
+.sticker-name small{
+  display:block;
+  font-size:26px;
+  letter-spacing:8px;
+  font-weight:900;
+}
+
+.sticker-role{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  font-size:13px;
+  letter-spacing:2px;
+  color:#ffd1ec;
+  font-weight:900;
+  margin:16px 0;
+}
+
+.sticker-info{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:8px;
+  margin:16px 0;
+}
+
+.sticker-info div{
+  border:1px solid rgba(255,215,130,.65);
+  border-radius:14px;
+  padding:12px 6px;
+  background:rgba(15,10,35,.72);
+  font-size:12px;
+  font-weight:900;
+}
+
+.sticker-team{
+  position:relative;
+  z-index:2;
+  background:rgba(60,10,70,.85);
+  border:1px solid rgba(255,215,130,.75);
+  border-radius:999px;
+  padding:12px;
+  font-weight:900;
+  letter-spacing:3px;
+}
+
+/* raridades */
+.normal{
+  background:linear-gradient(160deg,#151729,#0b0d18);
+}
+
+.glitter{
+  background:
+    radial-gradient(circle,rgba(255,255,255,.7) 1px,transparent 2px),
+    linear-gradient(135deg,#d0186b,#8b22b6,#2468c9);
+  background-size:18px 18px, 100% 100%;
+}
+
+.dourada{
+  background:
+    linear-gradient(135deg,#5b3b00,#f7d45a,#9b6a00,#fff1a6);
+}
+
+.metalizada{
+  background:
+    linear-gradient(135deg,#d0186b,#8b22b6,#2468c9,#f7d45a,#00d4ff,#d0186b);
+  background-size:300% 300%;
+  animation:metalMove 6s ease infinite;
+}
+
+@keyframes metalMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+.rarity-menu{
+  display:none;
+  position:absolute;
+  z-index:10;
+  left:14px;
+  right:14px;
+  bottom:14px;
+  background:#111427;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:18px;
+  padding:10px;
+  gap:8px;
+}
+
+.rarity-menu button{
+  border:0;
+  border-radius:999px;
+  padding:10px;
+  font-weight:900;
+}
+
+.sticker.menu-aberto .rarity-menu{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+} </style>
 </head>
 
 <body>
@@ -405,22 +582,39 @@ h1{
 
   <div class="album">
 
-  <div class="slot figurinha-master">
-  <div class="raridade">✨ METALIZADA</div>
+  <div class="slot sticker metalizada" oncontextmenu="abrirMenuRaridade(event, this)" ontouchstart="segurarFigurinha(this)" ontouchend="cancelarSegurar()">
 
-  <img src="fotos/IMG_2817.HEIC">
-
-  <strong>MELISSA<br>GOMES</strong>
-
-  <p class="cargo-card">Moderadora de Conteúdo</p>
-
-  <div class="tags-card">
-    <span>🏅 #10</span>
-    <span>🌙 NOITE</span>
-    <span>👔 MIRIÃ</span>
+  <div class="sticker-top">
+    <div class="rarity-label">✨ METALIZADA</div>
+    <div class="shirt-number">10</div>
   </div>
 
-  <div class="time-card">🇨🇲 CAMARÕES</div>
+  <div class="sticker-photo">
+    <img src="fotos/IMG_2817.HEIC">
+  </div>
+
+  <div class="sticker-name">
+    <span>MELISSA</span>
+    <small>GOMES</small>
+  </div>
+
+  <div class="sticker-role">MODERADORA DE CONTEÚDO</div>
+
+  <div class="sticker-info">
+    <div>🏅 #10</div>
+    <div>🌙 NOITE</div>
+    <div>👔 MIRIÃ</div>
+  </div>
+
+  <div class="sticker-team">🇨🇲 CAMARÕES</div>
+
+  <div class="rarity-menu">
+    <button onclick="trocarRaridade(this,'normal')">Normal</button>
+    <button onclick="trocarRaridade(this,'glitter')">Glitter</button>
+    <button onclick="trocarRaridade(this,'dourada')">Dourada</button>
+    <button onclick="trocarRaridade(this,'metalizada')">Metalizada</button>
+  </div>
+
 </div>
 
   <div class="slot">
@@ -547,6 +741,36 @@ function mostrar(id){
   document.getElementById(id).classList.remove("hidden");
   document.getElementById("menu").classList.add("hidden");
   window.scrollTo({top:0,behavior:"smooth"});
+}let tempoSegurar;
+
+function segurarFigurinha(card){
+  tempoSegurar = setTimeout(() => {
+    card.classList.add("menu-aberto");
+  }, 650);
+}
+
+function cancelarSegurar(){
+  clearTimeout(tempoSegurar);
+}
+
+function abrirMenuRaridade(event, card){
+  event.preventDefault();
+  card.classList.toggle("menu-aberto");
+}
+
+function trocarRaridade(botao, raridade){
+  const card = botao.closest(".sticker");
+
+  card.classList.remove("normal","glitter","dourada","metalizada");
+  card.classList.add(raridade);
+  card.classList.remove("menu-aberto");
+
+  const label = card.querySelector(".rarity-label");
+
+  if(raridade === "normal") label.textContent = "⭐ NORMAL";
+  if(raridade === "glitter") label.textContent = "✨ GLITTER";
+  if(raridade === "dourada") label.textContent = "🏆 DOURADA";
+  if(raridade === "metalizada") label.textContent = "✨ METALIZADA";
 }
 </script>
 
