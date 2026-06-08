@@ -16,7 +16,9 @@
   --texto:#f4f6ff;
   --muted:#a9aec4;
 }
+
 *{box-sizing:border-box}
+
 body{
   margin:0;
   font-family:Arial,sans-serif;
@@ -25,6 +27,7 @@ body{
     var(--fundo);
   color:var(--texto);
 }
+
 body:before{
   content:"";
   position:fixed;
@@ -35,43 +38,51 @@ body:before{
   background-size:58px 58px;
   pointer-events:none;
 }
+
 .tela{
   min-height:100vh;
   padding:34px 26px;
   position:relative;
 }
+
 .capa{
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
 }
+
 .taca{
   font-size:54px;
   margin-bottom:24px;
   animation:pulse 2.2s infinite alternate;
 }
+
 @keyframes pulse{
   from{transform:scale(1)}
   to{transform:scale(1.08)}
 }
+
 h1{
   font-size:58px;
   line-height:.95;
   margin:0;
   letter-spacing:5px;
 }
+
 .gradiente{
   background:linear-gradient(90deg,var(--pink),var(--roxo),var(--azul));
   -webkit-background-clip:text;
   color:transparent;
 }
+
 .frase{
   color:var(--muted);
   font-size:21px;
   line-height:1.35;
   margin:28px 0 42px;
 }
+
 .botao{
   border:0;
   border-radius:40px;
@@ -84,23 +95,28 @@ h1{
   background:linear-gradient(90deg,var(--pink),var(--roxo),var(--azul));
   box-shadow:0 0 26px rgba(208,24,107,.38);
 }
+
 .botao:active,
 .navBtn:active,
 .card:active{
-  transform:scale(.97);
+  transform:scale(.98);
 }
+
 .hidden{display:none}
+
 .topo{
   display:flex;
   justify-content:space-between;
   align-items:center;
   margin-bottom:24px;
 }
+
 .logo{
   font-weight:900;
   letter-spacing:4px;
   font-size:18px;
 }
+
 .menuBtn{
   width:66px;
   height:66px;
@@ -110,6 +126,7 @@ h1{
   color:white;
   font-size:28px;
 }
+
 .painelMenu{
   background:rgba(21,23,41,.98);
   border:1px solid rgba(255,255,255,.13);
@@ -121,10 +138,7 @@ h1{
   pointer-events:none;
   max-height:0;
   overflow:hidden;
-  transition:
-    opacity .2s ease,
-    transform .2s ease,
-    max-height .25s ease;
+  transition:opacity .2s ease, transform .2s ease, max-height .25s ease;
   will-change:transform,opacity;
 }
 
@@ -134,7 +148,7 @@ h1{
   transform:translateY(0) scale(1);
   max-height:900px;
 }
-}
+
 .grupoTitulo{
   color:var(--muted);
   letter-spacing:4px;
@@ -143,11 +157,13 @@ h1{
   margin:12px 0;
   text-transform:uppercase;
 }
+
 .botoes{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:10px;
 }
+
 .navBtn{
   border:1px solid rgba(255,255,255,.13);
   background:#202236;
@@ -156,65 +172,74 @@ h1{
   padding:13px;
   text-align:left;
   font-size:15px;
-  transition:.22s ease;
 }
+
 .navBtn.full{grid-column:1/-1}
+
 .card{
   background:rgba(21,23,41,.92);
   border:1px solid rgba(255,255,255,.13);
   border-radius:28px;
   padding:24px;
   margin:18px 0;
-  backdrop-filter:blur(8px);
   box-shadow:0 8px 30px rgba(0,0,0,.25);
-  transition:.22s ease;
 }
+
 .pagina{
-  animation:fadeUp .4s ease;
+  animation:fadeUp .28s ease;
 }
+
 @keyframes fadeUp{
-  from{opacity:0;transform:translateY(16px)}
+  from{opacity:0;transform:translateY(10px)}
   to{opacity:1;transform:translateY(0)}
 }
+
 .kicker{
   color:#d9def2;
   letter-spacing:5px;
   font-size:14px;
   text-transform:uppercase;
 }
+
 .card h2{
   font-size:34px;
   margin:16px 0 20px;
 }
+
 .card p{
   color:var(--muted);
   line-height:1.45;
   font-size:17px;
 }
+
 .chaveGrid{
   display:grid;
   gap:14px;
 }
+
 .jogo{
   background:#202236;
   border-left:5px solid var(--pink);
   padding:18px;
   border-radius:0 22px 22px 0;
 }
+
 .fase{
   color:var(--muted);
   letter-spacing:4px;
   font-size:13px;
   text-transform:uppercase;
 }
+
 .times{
   margin-top:10px;
   font-size:21px;
 }
+
 .album{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:16px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
 }
 
 .slot{
@@ -224,81 +249,14 @@ h1{
   padding:14px;
   text-align:center;
   color:#f4f6ff;
-  min-height:auto;
   box-shadow:0 16px 34px rgba(0,0,0,.45);
   overflow:hidden;
 }
 
-.slot img{
-  width:100% !important;
-  height:220px !important;
-  object-fit:cover !important;
-  object-position:center 10% !important;
-  border-radius:18px !important;
-  margin-bottom:16px !important;
-  border:1px solid rgba(255,255,255,.18);
-}
+.destaque{border-left:5px solid var(--azul)}
+.var{border-left:5px solid var(--roxo)}
+.juiz{border-left:5px solid var(--pink)}
 
-.slot strong{
-    display:block;
-    color:white;
-    font-size:16px;
-    line-height:1.2;
-    letter-spacing:0px;
-    margin-top:8px;
-    margin-bottom:8px;
-}
-  .raridade{
-  background:linear-gradient(90deg,var(--pink),var(--roxo),var(--azul));
-  color:white;
-  font-weight:900;
-  letter-spacing:2px;
-  border-radius:14px;
-  padding:10px;
-  margin-bottom:12px;
-  font-size:13px;
-}
-
-.cargo-card{
-  color:var(--muted);
-  font-size:15px;
-  margin:10px 0 14px;
-}
-
-.tags-card{
-  display:grid;
-  gap:8px;
-  margin:12px 0;
-}
-
-.tags-card span{
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:999px;
-  padding:8px;
-  font-size:13px;
-  font-weight:bold;
-}
-
-.time-card{
-  background:rgba(208,24,107,.9);
-  color:white;
-  border-radius:999px;
-  padding:9px;
-  font-weight:900;
-  font-size:13px;
-  letter-spacing:1px;
-  margin-top:12px;
-}
-.destaque{
-  border-left:5px solid var(--azul);
-}
-.var{
-  border-left:5px solid var(--roxo);
-}
-.juiz{
-  border-left:5px solid var(--pink);
-}
 .sticker{
   position:relative;
   padding:18px;
@@ -318,18 +276,26 @@ h1{
   position:absolute;
   inset:0;
   background:
-    linear-gradient(115deg,transparent 0%,rgba(255,255,255,.32) 38%,transparent 58%),
-    radial-gradient(circle at 20% 10%,rgba(255,255,255,.45),transparent 18%);
-  opacity:.55;
+    linear-gradient(115deg,transparent 0%,rgba(255,255,255,.28) 42%,transparent 60%),
+    radial-gradient(circle at 20% 10%,rgba(255,255,255,.35),transparent 18%);
+  opacity:.45;
   pointer-events:none;
+}
+
+.sticker-top,
+.sticker-photo,
+.sticker-name,
+.sticker-role,
+.sticker-info,
+.sticker-team{
+  position:relative;
+  z-index:2;
 }
 
 .sticker-top{
   display:flex;
   justify-content:space-between;
   align-items:flex-start;
-  position:relative;
-  z-index:2;
   margin-bottom:12px;
 }
 
@@ -337,7 +303,6 @@ h1{
   font-size:12px;
   font-weight:900;
   letter-spacing:4px;
-  text-transform:uppercase;
   color:#fff7c9;
   text-shadow:0 0 10px rgba(255,220,120,.7);
 }
@@ -351,28 +316,21 @@ h1{
 }
 
 .sticker-photo{
-  position:relative;
-  z-index:2;
   height:300px;
   border-radius:24px;
   overflow:hidden;
   margin:8px 0 20px;
   border:2px solid rgba(255,230,160,.75);
-  box-shadow:inset 0 0 18px rgba(0,0,0,.45);
 }
 
 .sticker-photo img{
-  width:100% !important;
-  height:100% !important;
-  object-fit:cover !important;
-  object-position:center 18% !important;
-  border-radius:0 !important;
-  margin:0 !important;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 18%;
 }
 
 .sticker-name{
-  position:relative;
-  z-index:2;
   text-align:center;
   line-height:.88;
   margin:18px 0 10px;
@@ -395,8 +353,6 @@ h1{
 }
 
 .sticker-role{
-  position:relative;
-  z-index:2;
   text-align:center;
   font-size:13px;
   letter-spacing:3px;
@@ -406,8 +362,6 @@ h1{
 }
 
 .sticker-info{
-  position:relative;
-  z-index:2;
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
   gap:10px;
@@ -421,43 +375,36 @@ h1{
   background:rgba(12,9,28,.76);
   font-size:13px;
   font-weight:900;
-  box-shadow:inset 0 0 12px rgba(255,255,255,.06);
 }
 
 .sticker-team{
-  position:relative;
-  z-index:2;
   background:rgba(80,8,78,.88);
   border:1px solid rgba(255,215,130,.85);
   border-radius:999px;
   padding:14px;
   font-weight:900;
   letter-spacing:4px;
-  box-shadow:0 0 18px rgba(208,24,107,.28);
 }
 
-/* raridades */
 .normal{
   background:linear-gradient(160deg,#151729,#0b0d18);
 }
 
 .glitter{
   background:
-    radial-gradient(circle,rgba(255,255,255,.7) 1px,transparent 2px),
+    radial-gradient(circle,rgba(255,255,255,.75) 1px,transparent 2px),
     linear-gradient(135deg,#d0186b,#8b22b6,#2468c9);
-  background-size:18px 18px, 100% 100%;
+  background-size:18px 18px,100% 100%;
 }
 
 .dourada{
-  background:
-    linear-gradient(135deg,#5b3b00,#f7d45a,#9b6a00,#fff1a6);
+  background:linear-gradient(135deg,#5b3b00,#f7d45a,#9b6a00,#fff1a6);
 }
 
 .metalizada{
-  background:
-    linear-gradient(135deg,#d0186b,#8b22b6,#2468c9,#f7d45a,#00d4ff,#d0186b);
-  background-size:300% 300%;
-  animation:metalMove 6s ease infinite;
+  background:linear-gradient(135deg,#d0186b,#8b22b6,#2468c9,#f7d45a,#00d4ff,#d0186b);
+  background-size:220% 220%;
+  animation:metalMove 14s linear infinite;
 }
 
 @keyframes metalMove{
@@ -468,34 +415,24 @@ h1{
 
 .rarity-menu{
   position:absolute;
+  z-index:50;
   left:14px;
   right:14px;
   bottom:14px;
-
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:8px;
-
-  background:rgba(10,12,24,.92);
-  backdrop-filter:blur(14px);
-
+  background:rgba(10,12,24,.94);
   border:1px solid rgba(255,255,255,.12);
   border-radius:18px;
-
   padding:10px;
-
   opacity:0;
   visibility:hidden;
-
+  pointer-events:none;
   transform:translateY(12px);
-  transition:
-    opacity .18s ease,
-    transform .18s ease,
-    visibility .18s;
-
+  transition:opacity .18s ease, transform .18s ease, visibility .18s;
   will-change:transform,opacity;
 }
-
 
 .rarity-menu button{
   border:0;
@@ -507,9 +444,14 @@ h1{
 .sticker.menu-aberto .rarity-menu{
   opacity:1;
   visibility:visible;
+  pointer-events:auto;
   transform:translateY(0);
 }
- </style>
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+</style>
 </head>
 
 <body>
@@ -530,7 +472,7 @@ h1{
     <button class="menuBtn" onclick="abrirMenu()">☰</button>
   </div>
 
-  <div id="menu" class="painelMenu hidden">
+  <div id="menu" class="painelMenu">
     <div class="grupoTitulo">Navegação</div>
     <div class="botoes">
       <button class="navBtn full" onclick="mostrar('chaveamento')">🏆 Chaveamento</button>
@@ -564,45 +506,25 @@ h1{
     <div class="card">
       <div class="kicker">Área de chaveamento</div>
       <h2>Mata-mata da Madrugada</h2>
-
       <div class="chaveGrid">
         <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇨🇲 Camarões × 🇧🇷 Brasil</div></div>
         <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇦🇷 Argentina × 🇫🇷 França</div></div>
         <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇩🇪 Alemanha × 🇪🇸 Espanha</div></div>
         <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇵🇹 Portugal × 🇮🇹 Itália</div></div>
-        <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇯🇵 Japão × 🇲🇽 México</div></div>
-        <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇺🇾 Uruguai × 🇬🇧 Inglaterra</div></div>
-        <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇳🇱 Holanda × 🇭🇷 Croácia</div></div>
-        <div class="jogo"><div class="fase">Oitavas</div><div class="times">🇰🇷 Coreia × 🇺🇸 EUA</div></div>
-        <div class="jogo"><div class="fase">Quartas</div><div class="times">Vencedores das oitavas</div></div>
-        <div class="jogo"><div class="fase">Semifinal</div><div class="times">A definir × A definir</div></div>
-        <div class="jogo"><div class="fase">Final</div><div class="times">🏆 A definir</div></div>
       </div>
     </div>
   </div>
 
   <div id="supervisores" class="pagina hidden">
-    <div class="card destaque">
-      <div class="kicker">Comissão técnica</div>
-      <h2>👔 Supervisores</h2>
-      <p>Os estrategistas por trás das seleções.</p>
-    </div>
+    <div class="card destaque"><div class="kicker">Comissão técnica</div><h2>👔 Supervisores</h2><p>Os estrategistas por trás das seleções.</p></div>
   </div>
 
   <div id="coordenadores" class="pagina hidden">
-    <div class="card var">
-      <div class="kicker">VAR</div>
-      <h2>🎯 Coordenadores</h2>
-      <p>Responsáveis por escalar craques, administrar crises e tomar decisões críticas durante o campeonato.</p>
-    </div>
+    <div class="card var"><div class="kicker">VAR</div><h2>🎯 Coordenadores</h2><p>Responsáveis por escalar craques, administrar crises e tomar decisões críticas durante o campeonato.</p></div>
   </div>
 
   <div id="gerencia" class="pagina hidden">
-    <div class="card juiz">
-      <div class="kicker">Juiz principal</div>
-      <h2>⚖️ Gerência</h2>
-      <p>Aquele que tudo sabe e tudo vê.</p>
-    </div>
+    <div class="card juiz"><div class="kicker">Juiz principal</div><h2>⚖️ Gerência</h2><p>Aquele que tudo sabe e tudo vê.</p></div>
   </div>
 
   <div id="camaroes" class="pagina hidden">
@@ -625,135 +547,48 @@ h1{
     </div>
 
     <div class="card">
-  <div class="kicker">Álbum</div>
-  <h2>📖 Figurinhas de Camarões</h2>
+      <div class="kicker">Álbum</div>
+      <h2>📖 Figurinhas de Camarões</h2>
 
-  <div class="album">
+      <div class="album">
 
-  <div class="slot sticker metalizada" oncontextmenu="abrirMenuRaridade(event, this)" ontouchstart="segurarFigurinha(this)" ontouchend="cancelarSegurar()">
+        <div class="slot sticker metalizada" oncontextmenu="abrirMenuRaridade(event,this)" ontouchstart="segurarFigurinha(this)" ontouchend="cancelarSegurar()">
+          <div class="sticker-top">
+            <div class="rarity-label">✨ METALIZADA</div>
+            <div class="shirt-number">10</div>
+          </div>
 
-  <div class="sticker-top">
-    <div class="rarity-label">✨ METALIZADA</div>
-    <div class="shirt-number">10</div>
-  </div>
+          <div class="sticker-photo">
+            <img src="fotos/IMG_2817.HEIC">
+          </div>
 
-  <div class="sticker-photo">
-    <img src="fotos/IMG_2817.HEIC">
-  </div>
+          <div class="sticker-name">
+            <span>MELISSA</span>
+            <small>GOMES</small>
+          </div>
 
-  <div class="sticker-name">
-    <span>MELISSA</span>
-    <small>GOMES</small>
-  </div>
+          <div class="sticker-role">MODERADORA DE CONTEÚDO</div>
 
-  <div class="sticker-role">MODERADORA DE CONTEÚDO</div>
+          <div class="sticker-info">
+            <div>🏅 #10</div>
+            <div>🌙 NOITE</div>
+            <div>👔 MIRIÃ</div>
+          </div>
 
-  <div class="sticker-info">
-    <div>🏅 #10</div>
-    <div>🌙 NOITE</div>
-    <div>👔 MIRIÃ</div>
-  </div>
+          <div class="sticker-team">🇨🇲 CAMARÕES</div>
 
-  <div class="sticker-team">🇨🇲 CAMARÕES</div>
+          <div class="rarity-menu">
+            <button onclick="trocarRaridade(this,'normal')">Normal</button>
+            <button onclick="trocarRaridade(this,'glitter')">Glitter</button>
+            <button onclick="trocarRaridade(this,'dourada')">Dourada</button>
+            <button onclick="trocarRaridade(this,'metalizada')">Metalizada</button>
+          </div>
+        </div>
 
-  <div class="rarity-menu">
-    <button onclick="trocarRaridade(this,'normal')">Normal</button>
-    <button onclick="trocarRaridade(this,'glitter')">Glitter</button>
-    <button onclick="trocarRaridade(this,'dourada')">Dourada</button>
-    <button onclick="trocarRaridade(this,'metalizada')">Metalizada</button>
-  </div>
+        <div class="slot">📸<br><br><strong>OUTRAS FIGURINHAS</strong><br>Vamos converter depois.</div>
 
-</div>
-
-  <div class="slot">
-    <img src="fotos/IMG_2818.HEIC" style="width:100%;height:220px;object-fit:cover;border-radius:16px;margin-bottom:12px;">
-    <strong>VINICIUS</strong><br>
-    Moderador de Conteúdo<br><br>
-    🏅 Nº 14<br>
-    🌙 Noite<br>
-    👔 Miriã Ourique
-  </div>
-
-  <div class="slot">
-    <img src="fotos/IMG_2819.HEIC" style="width:100%;height:220px;object-fit:cover;border-radius:16px;margin-bottom:12px;">
-    <strong>GUILHERME PIRES</strong><br>
-    Moderador de Conteúdo<br><br>
-    🏅 Nº 15<br>
-    🌙 Noite<br>
-    👔 Miriã Ourique
-  </div>
-
-  <div class="slot">
-    <img src="fotos/IMG_2820.HEIC" style="width:100%;height:220px;object-fit:cover;border-radius:16px;margin-bottom:12px;">
-    <strong>LEONARDO PINHEIRO</strong><br>
-    Moderador de Conteúdo<br><br>
-    🏅 Nº 13<br>
-    🌙 Noite<br>
-    👔 Miriã Ourique
-  </div>
-
-  <div class="slot">
-    <img src="fotos/IMG_2821.HEIC" style="width:100%;height:220px;object-fit:cover;border-radius:16px;margin-bottom:12px;">
-    <strong>DIOGO MENDES</strong><br>
-    Moderador de Conteúdo<br><br>
-    🏅 Nº 16<br>
-    🌙 Noite<br>
-    👔 Miriã Ourique
-  </div>
-
-  <div class="slot">
-    <img src="fotos/IMG_2822.HEIC" style="width:100%;height:220px;object-fit:cover;border-radius:16px;margin-bottom:12px;">
-    <strong>WILSON</strong><br>
-    Moderador de Conteúdo<br><br>
-    🏅 Nº 17<br>
-    🌙 Noite<br>
-    👔 Miriã Ourique
-  </div>
-
-  <div class="slot">
-    <img src="fotos/IMG_2823.HEIC" style="width:100%;height:220px;object-fit:cover;border-radius:16px;margin-bottom:12px;">
-    <strong>BALDINI</strong><br>
-    Moderador de Conteúdo<br><br>
-    🏅 Nº 18<br>
-    🌙 Noite<br>
-    👔 Miriã Ourique
-  </div>
-
-  <div class="slot">
-    <img src="fotos/IMG_2824.HEIC" style="width:100%;height:220px;object-fit:cover;border-radius:16px;margin-bottom:12px;">
-    <strong>CAIO</strong><br>
-    Moderador de Conteúdo<br><br>
-    🏅 Nº 19<br>
-    🌙 Noite<br>
-    👔 Miriã Ourique
-  </div>
-
-  <div class="slot">
-    <img src="fotos/IMG_2825.HEIC" style="width:100%;height:220px;object-fit:cover;border-radius:16px;margin-bottom:12px;">
-    <strong>NIZIA ROCHA</strong><br>
-    Moderadora de Conteúdo<br><br>
-    🏅 Nº 6<br>
-    🌙 Noite<br>
-    👔 Miriã Ourique
-  </div>
-
-  <div class="slot">
-    <img src="fotos/IMG_2827.HEIC" style="width:100%;height:220px;object-fit:cover;border-radius:16px;margin-bottom:12px;">
-    <strong>MIRIÃ OURIQUE</strong><br>
-    Supervisora<br><br>
-    🏅 Nº 8<br>
-    🌙 Noite
-  </div>
-
-  <div class="slot">📸<br><br><strong>ARTHUR TELLES</strong><br>Foto oficial em breve</div>
-  <div class="slot">📸<br><br><strong>MAURÍCIO</strong><br>Foto oficial em breve</div>
-  <div class="slot">📸<br><br><strong>ERICA</strong><br>Foto oficial em breve</div>
-  <div class="slot">📸<br><br><strong>ELO</strong><br>Foto oficial em breve</div>
-  <div class="slot">📸<br><br><strong>PEDRE</strong><br>Foto oficial em breve</div>
-  <div class="slot">📸<br><br><strong>VICTORIA MELO</strong><br>Foto oficial em breve</div>
-
-</div>
-</div>
+      </div>
+    </div>
   </div>
 
   <div id="brasil" class="pagina hidden"><div class="card"><h2>🇧🇷 Brasil</h2><p>🚧 Seleção em preparação.</p></div></div>
@@ -781,20 +616,22 @@ function entrar(){
 }
 
 function abrirMenu(){
-  document.getElementById("menu").classList.toggle("hidden");
+  document.getElementById("menu").classList.toggle("aberto");
 }
 
 function mostrar(id){
   document.querySelectorAll(".pagina").forEach(p => p.classList.add("hidden"));
   document.getElementById(id).classList.remove("hidden");
-  document.getElementById("menu").classList.add("hidden");
-  window.scrollTo({top:0,behavior:"smooth"});
-}let tempoSegurar;
+  document.getElementById("menu").classList.remove("aberto");
+  window.scrollTo(0,0);
+}
+
+let tempoSegurar;
 
 function segurarFigurinha(card){
   tempoSegurar = setTimeout(() => {
     card.classList.add("menu-aberto");
-  }, 650);
+  }, 500);
 }
 
 function cancelarSegurar(){
@@ -808,13 +645,11 @@ function abrirMenuRaridade(event, card){
 
 function trocarRaridade(botao, raridade){
   const card = botao.closest(".sticker");
-
   card.classList.remove("normal","glitter","dourada","metalizada");
   card.classList.add(raridade);
   card.classList.remove("menu-aberto");
 
   const label = card.querySelector(".rarity-label");
-
   if(raridade === "normal") label.textContent = "⭐ NORMAL";
   if(raridade === "glitter") label.textContent = "✨ GLITTER";
   if(raridade === "dourada") label.textContent = "🏆 DOURADA";
