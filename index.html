@@ -238,217 +238,304 @@ h1{
 
 .album{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:18px;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:32px;
+  margin-top:20px;
 }
 
 .slot{
   background:linear-gradient(160deg,#181a2f,#0e1022);
-  border:2px solid rgba(255,255,255,.18);
+  border:2px dashed rgba(255,255,255,.22);
   border-radius:28px;
-  padding:14px;
+  padding:24px;
+  min-height:300px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
   text-align:center;
   color:#f4f6ff;
-  box-shadow:0 16px 34px rgba(0,0,0,.45);
-  overflow:hidden;
 }
-
-.destaque{border-left:5px solid var(--azul)}
-.var{border-left:5px solid var(--roxo)}
-.juiz{border-left:5px solid var(--pink)}
 
 .sticker{
   position:relative;
-  padding:18px;
-  border-radius:34px;
-  overflow:hidden;
-  color:white;
-  min-height:620px;
-  border:3px solid rgba(255,218,120,.9);
-  box-shadow:
-    0 0 0 6px rgba(255,255,255,.06),
-    0 18px 45px rgba(0,0,0,.65),
-    inset 0 0 35px rgba(255,255,255,.10);
+  border-radius:22px;
+  padding:5px;
+  cursor:pointer;
+  user-select:none;
+  background:linear-gradient(135deg,#c9a227,#fff5a0,#c9a227,#7a5500,#ffe680,#c9a227);
+  background-size:400% 400%;
+  animation:bordaOuro 5s linear infinite;
+  box-shadow:0 0 30px rgba(201,162,39,.5),0 24px 60px rgba(0,0,0,.5);
 }
 
-.sticker:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(115deg,transparent 0%,rgba(255,255,255,.28) 42%,transparent 60%),
-    radial-gradient(circle at 20% 10%,rgba(255,255,255,.35),transparent 18%);
-  opacity:.45;
-  pointer-events:none;
-}
-
-.sticker-top,
-.sticker-photo,
-.sticker-name,
-.sticker-role,
-.sticker-info,
-.sticker-team{
-  position:relative;
-  z-index:2;
-}
-
-.sticker-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  margin-bottom:12px;
-}
-
-.rarity-label{
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:4px;
-  color:#fff7c9;
-  text-shadow:0 0 10px rgba(255,220,120,.7);
-}
-
-.shirt-number{
-  font-size:58px;
-  line-height:.8;
-  font-weight:900;
-  color:#fff0a8;
-  text-shadow:0 0 14px rgba(255,220,120,.55);
-}
-
-.sticker-photo{
-  height:300px;
-  border-radius:24px;
-  overflow:hidden;
-  margin:8px 0 20px;
-  border:2px solid rgba(255,230,160,.75);
-}
-
-.sticker-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center 18%;
-}
-
-.sticker-name{
-  text-align:center;
-  line-height:.88;
-  margin:18px 0 10px;
-}
-
-.sticker-name span{
-  display:block;
-  font-size:48px;
-  font-weight:900;
-  color:#ffe7a3;
-  text-shadow:0 0 12px rgba(255,210,100,.45);
-}
-
-.sticker-name small{
-  display:block;
-  font-size:27px;
-  letter-spacing:10px;
-  font-weight:900;
-  color:white;
-}
-
-.sticker-role{
-  text-align:center;
-  font-size:13px;
-  letter-spacing:3px;
-  color:#ffc4e7;
-  font-weight:900;
-  margin:18px 0;
-}
-
-.sticker-info{
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:10px;
-  margin:18px 0;
-}
-
-.sticker-info div{
-  border:1px solid rgba(255,215,130,.75);
-  border-radius:16px;
-  padding:13px 6px;
-  background:rgba(12,9,28,.76);
-  font-size:13px;
-  font-weight:900;
-}
-
-.sticker-team{
-  background:rgba(80,8,78,.88);
-  border:1px solid rgba(255,215,130,.85);
-  border-radius:999px;
-  padding:14px;
-  font-weight:900;
-  letter-spacing:4px;
-}
-
-.normal{
-  background:linear-gradient(160deg,#151729,#0b0d18);
-}
-
-.glitter{
-  background:
-    radial-gradient(circle,rgba(255,255,255,.75) 1px,transparent 2px),
-    linear-gradient(135deg,#d0186b,#8b22b6,#2468c9);
-  background-size:18px 18px,100% 100%;
-}
-
-.dourada{
-  background:linear-gradient(135deg,#5b3b00,#f7d45a,#9b6a00,#fff1a6);
-}
-
-.metalizada{
-  background:linear-gradient(135deg,#d0186b,#8b22b6,#2468c9,#f7d45a,#00d4ff,#d0186b);
-  background-size:220% 220%;
-  animation:metalMove 14s linear infinite;
-}
-
-@keyframes metalMove{
+@keyframes bordaOuro{
   0%{background-position:0% 50%}
   50%{background-position:100% 50%}
   100%{background-position:0% 50%}
 }
 
+.sticker-inner{
+  border-radius:18px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  min-height:570px;
+  position:relative;
+}
+
+.sticker.normal .sticker-inner{
+  background:linear-gradient(160deg,#2c1a50,#180d38);
+}
+
+.sticker.glitter .sticker-inner{
+  background:
+    repeating-linear-gradient(55deg,rgba(255,120,220,.1) 0,rgba(255,120,220,.1) 2px,transparent 2px,transparent 9px),
+    repeating-linear-gradient(-55deg,rgba(80,200,255,.1) 0,rgba(80,200,255,.1) 2px,transparent 2px,transparent 9px),
+    linear-gradient(145deg,#3a0060,#700090,#3a0060);
+}
+
+.sticker.dourada .sticker-inner{
+  background:linear-gradient(150deg,#2e1a00,#6a4200,#c9a227,#6a4200,#2e1a00);
+}
+
+.sticker.metalizada .sticker-inner{
+  background:linear-gradient(145deg,#2d0850,#6010a0,#1030a0,#501080,#102050,#380870);
+  animation:holoShift 6s linear infinite;
+}
+
+@keyframes holoShift{
+  0%{filter:hue-rotate(0deg) brightness(1)}
+  50%{filter:hue-rotate(200deg) brightness(1.18)}
+  100%{filter:hue-rotate(360deg) brightness(1)}
+}
+
+.sticker.metalizada .sticker-inner::after,
+.sticker.glitter .sticker-inner::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(115deg,transparent,rgba(255,100,220,.2),rgba(80,200,255,.2),rgba(255,220,80,.2),transparent);
+  background-size:250% 250%;
+  animation:reflexoHolo 3.5s ease-in-out infinite alternate;
+  pointer-events:none;
+  z-index:3;
+}
+
+@keyframes reflexoHolo{
+  from{background-position:0% 50%;opacity:.6}
+  to{background-position:100% 50%;opacity:1}
+}
+
+.sticker-topo{
+  display:flex;
+  justify-content:space-between;
+  padding:14px 14px 0;
+  position:relative;
+  z-index:4;
+}
+
+.sticker-tag-numero,
+.sticker-escudo{
+  background:linear-gradient(160deg,#4a1080,#280850);
+  border:1.5px solid rgba(201,162,39,.75);
+  box-shadow:0 4px 16px rgba(0,0,0,.45);
+}
+
+.sticker-tag-numero{
+  border-radius:12px 12px 12px 4px;
+  padding:8px 10px 10px;
+  min-width:54px;
+  text-align:center;
+}
+
+.sticker-raridade-label{
+  font-size:7.5px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  color:#e8c84a;
+  text-transform:uppercase;
+  white-space:pre-line;
+}
+
+.sticker-numero{
+  font-family:'Bebas Neue',Arial,sans-serif;
+  font-size:46px;
+  line-height:.82;
+  color:white;
+}
+
+.sticker-bandeira{font-size:20px}
+
+.sticker-escudo{
+  border-radius:50%;
+  width:60px;
+  height:60px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.sticker-escudo-emoji{font-size:24px}
+
+.sticker-escudo-nome{
+  font-size:6px;
+  font-weight:700;
+  letter-spacing:1px;
+  color:#e8c84a;
+}
+
+.sticker-foto{
+  margin:12px 12px 0;
+  border-radius:12px;
+  overflow:hidden;
+  border:2px solid rgba(201,162,39,.65);
+  height:230px;
+  position:relative;
+  z-index:4;
+}
+
+.sticker-foto img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 18%;
+  display:block;
+}
+
+.sticker-nome-area{
+  background:rgba(15,4,35,.9);
+  margin:8px 8px 0;
+  border-radius:10px 10px 0 0;
+  border:1px solid rgba(201,162,39,.35);
+  border-bottom:none;
+  padding:14px 14px 6px;
+  text-align:center;
+  position:relative;
+  z-index:4;
+}
+
+.sticker-nome-primeiro{
+  font-family:'Bebas Neue',Arial,sans-serif;
+  font-size:56px;
+  line-height:.82;
+  letter-spacing:4px;
+  background:linear-gradient(180deg,#fff5a0,#c9a227,#ffe87a,#7a5500);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.sticker-nome-ultimo{
+  font-family:'Bebas Neue',Arial,sans-serif;
+  font-size:24px;
+  letter-spacing:14px;
+  color:white;
+}
+
+.sticker-cargo{
+  font-size:8.5px;
+  letter-spacing:3px;
+  color:#dda0dd;
+  text-transform:uppercase;
+  margin-top:7px;
+}
+
+.sticker-info{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:6px;
+  margin:0 8px;
+  padding:8px;
+  background:rgba(15,4,35,.9);
+  border-left:1px solid rgba(201,162,39,.35);
+  border-right:1px solid rgba(201,162,39,.35);
+  position:relative;
+  z-index:4;
+}
+
+.sticker-info-item{
+  background:linear-gradient(160deg,#1c0840,#100530);
+  border:1.5px solid rgba(201,162,39,.6);
+  border-radius:10px;
+  padding:10px 4px 8px;
+  text-align:center;
+}
+
+.sticker-info-emoji{font-size:17px;display:block}
+.sticker-info-valor{font-family:'Bebas Neue',Arial,sans-serif;font-size:14px;letter-spacing:2px;color:white;display:block}
+.sticker-info-label{font-size:6.5px;letter-spacing:1px;color:#c9a227;text-transform:uppercase}
+
+.sticker-selecao{
+  margin:0 8px 8px;
+  background:linear-gradient(135deg,#38106a,#1c0640);
+  border:1.5px solid rgba(201,162,39,.75);
+  border-top:none;
+  border-radius:0 0 12px 12px;
+  padding:12px 10px;
+  text-align:center;
+  position:relative;
+  z-index:4;
+}
+
+.sticker-selecao-nome{
+  font-family:'Bebas Neue',Arial,sans-serif;
+  font-size:19px;
+  letter-spacing:5px;
+  background:linear-gradient(90deg,#c9a227,#fff5a0,#c9a227);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
 .rarity-menu{
   position:absolute;
+  inset:0;
   z-index:50;
-  left:14px;
-  right:14px;
-  bottom:14px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-  background:rgba(10,12,24,.94);
-  border:1px solid rgba(255,255,255,.12);
+  background:rgba(8,2,20,.93);
   border-radius:18px;
-  padding:10px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:24px;
   opacity:0;
   visibility:hidden;
   pointer-events:none;
-  transform:translateY(12px);
-  transition:opacity .18s ease, transform .18s ease, visibility .18s;
-  will-change:transform,opacity;
+}
+
+.rarity-menu-label{
+  font-family:'Bebas Neue',Arial,sans-serif;
+  font-size:22px;
+  letter-spacing:5px;
+  color:#e8c84a;
+}
+
+.rarity-menu-btns{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  width:100%;
 }
 
 .rarity-menu button{
-  border:0;
-  border-radius:999px;
-  padding:10px;
-  font-weight:900;
+  border:1.5px solid rgba(201,162,39,.4);
+  border-radius:10px;
+  padding:14px;
+  font-weight:700;
+  color:white;
 }
+
+.btn-normal{background:#2c1a50}
+.btn-glitter{background:#700090}
+.btn-dourada{background:#6a4200}
+.btn-metalizada{background:#2d0850}
 
 .sticker.menu-aberto .rarity-menu{
   opacity:1;
   visibility:visible;
   pointer-events:auto;
-  transform:translateY(0);
 }
-
-@media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
 }
 </style>
@@ -552,41 +639,74 @@ h1{
 
       <div class="album">
 
-        <div class="slot sticker metalizada" oncontextmenu="abrirMenuRaridade(event,this)" ontouchstart="segurarFigurinha(this)" ontouchend="cancelarSegurar()">
-          <div class="sticker-top">
-            <div class="rarity-label">✨ METALIZADA</div>
-            <div class="shirt-number">10</div>
-          </div>
+       <div class="sticker metalizada"
+     oncontextmenu="abrirMenuRaridade(event,this)"
+     ontouchstart="segurarFigurinha(this)"
+     ontouchend="cancelarSegurar()">
 
-          <div class="sticker-photo">
-            <img src="fotos/IMG_2817.HEIC">
-          </div>
+  <div class="sticker-inner">
 
-          <div class="sticker-name">
-            <span>MELISSA</span>
-            <small>GOMES</small>
-          </div>
+    <div class="sticker-topo">
+      <div class="sticker-tag-numero">
+        <div class="sticker-raridade-label">★<br>METALIZADA</div>
+        <div class="sticker-numero">10</div>
+        <div class="sticker-bandeira">🇨🇲</div>
+      </div>
 
-          <div class="sticker-role">MODERADORA DE CONTEÚDO</div>
+      <div class="sticker-escudo">
+        <div class="sticker-escudo-emoji">🦑</div>
+        <div class="sticker-escudo-nome">CAMARÕES</div>
+      </div>
+    </div>
 
-          <div class="sticker-info">
-            <div>🏅 #10</div>
-            <div>🌙 NOITE</div>
-            <div>👔 MIRIÃ</div>
-          </div>
+    <div class="sticker-foto">
+      <img src="fotos/IMG_2817.HEIC" alt="Melissa Gomes">
+    </div>
 
-          <div class="sticker-team">🇨🇲 CAMARÕES</div>
+    <div class="sticker-nome-area">
+      <div class="sticker-nome-primeiro">MELISSA</div>
+      <div class="sticker-nome-ultimo">GOMES</div>
+      <div class="sticker-cargo">Moderadora de Conteúdo</div>
+    </div>
 
-          <div class="rarity-menu">
-            <button onclick="trocarRaridade(this,'normal')">Normal</button>
-            <button onclick="trocarRaridade(this,'glitter')">Glitter</button>
-            <button onclick="trocarRaridade(this,'dourada')">Dourada</button>
-            <button onclick="trocarRaridade(this,'metalizada')">Metalizada</button>
-          </div>
-        </div>
+    <div class="sticker-info">
+      <div class="sticker-info-item">
+        <span class="sticker-info-emoji">🏅</span>
+        <span class="sticker-info-valor">#10</span>
+        <span class="sticker-info-label">Número</span>
+      </div>
 
-        <div class="slot">📸<br><br><strong>OUTRAS FIGURINHAS</strong><br>Vamos converter depois.</div>
+      <div class="sticker-info-item">
+        <span class="sticker-info-emoji">🌙</span>
+        <span class="sticker-info-valor">NOITE</span>
+        <span class="sticker-info-label">Turno</span>
+      </div>
 
+      <div class="sticker-info-item">
+        <span class="sticker-info-emoji">👔</span>
+        <span class="sticker-info-valor">MIRIÃ</span>
+        <span class="sticker-info-label">Supervisora</span>
+      </div>
+    </div>
+
+    <div class="sticker-selecao">
+      <span class="sticker-selecao-nome">🇨🇲 CAMARÕES</span>
+    </div>
+
+    <div class="rarity-menu">
+      <div class="rarity-menu-label">TROCAR RARIDADE</div>
+
+      <div class="rarity-menu-btns">
+        <button class="btn-normal" onclick="trocarRaridade(this,'normal')">⭐ Normal</button>
+        <button class="btn-glitter" onclick="trocarRaridade(this,'glitter')">✨ Glitter</button>
+        <button class="btn-dourada" onclick="trocarRaridade(this,'dourada')">🏆 Dourada</button>
+        <button class="btn-metalizada" onclick="trocarRaridade(this,'metalizada')">💎 Metalizada</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+        
       </div>
     </div>
   </div>
@@ -645,15 +765,21 @@ function abrirMenuRaridade(event, card){
 
 function trocarRaridade(botao, raridade){
   const card = botao.closest(".sticker");
+
   card.classList.remove("normal","glitter","dourada","metalizada");
   card.classList.add(raridade);
   card.classList.remove("menu-aberto");
 
-  const label = card.querySelector(".rarity-label");
-  if(raridade === "normal") label.textContent = "⭐ NORMAL";
-  if(raridade === "glitter") label.textContent = "✨ GLITTER";
-  if(raridade === "dourada") label.textContent = "🏆 DOURADA";
-  if(raridade === "metalizada") label.textContent = "✨ METALIZADA";
+  const label = card.querySelector(".sticker-raridade-label");
+
+  const labels = {
+    normal: "⭐ NORMAL",
+    glitter: "✨ GLITTER",
+    dourada: "🏆 DOURADA",
+    metalizada: "★\nMETALIZADA"
+  };
+
+  label.textContent = labels[raridade] || "";
 }
 </script>
 
