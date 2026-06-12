@@ -536,6 +536,8 @@ h1{
   visibility:visible;
   pointer-events:auto;
 }
+
+@media (prefers-reduced-motion: reduce){
   *{animation:none!important;transition:none!important}
 }
 </style>
@@ -639,341 +641,440 @@ h1{
 
       <div class="album">
 
-       <div class="sticker metalizada"
-     oncontextmenu="abrirMenuRaridade(event,this)"
-     ontouchstart="segurarFigurinha(this)"
-     ontouchend="cancelarSegurar()">
+        <!-- MELISSA -->
+        <div class="sticker metalizada"
+             oncontextmenu="abrirMenuRaridade(event,this)"
+             ontouchstart="segurarFigurinha(this)"
+             ontouchend="cancelarSegurar()">
+          <div class="sticker-inner">
 
-  <div class="sticker-inner">
+            <div class="sticker-topo">
+              <div class="sticker-tag-numero">
+                <div class="sticker-raridade-label">★<br>METALIZADA</div>
+                <div class="sticker-numero">10</div>
+                <div class="sticker-bandeira">🇨🇲</div>
+              </div>
 
-    <div class="sticker-topo">
-      <div class="sticker-tag-numero">
-        <div class="sticker-raridade-label">★<br>METALIZADA</div>
-        <div class="sticker-numero">10</div>
-        <div class="sticker-bandeira">🇨🇲</div>
-      </div>
+              <div class="sticker-escudo">
+                <div class="sticker-escudo-emoji">🦑</div>
+                <div class="sticker-escudo-nome">CAMARÕES</div>
+              </div>
+            </div>
 
-      <div class="sticker-escudo">
-        <div class="sticker-escudo-emoji">🦑</div>
-        <div class="sticker-escudo-nome">CAMARÕES</div>
+            <div class="sticker-foto">
+              <img src="fotos/IMG_2817.jpg" alt="Melissa Gomes">
+            </div>
+
+            <div class="sticker-nome-area">
+              <div class="sticker-nome-primeiro">MELISSA</div>
+              <div class="sticker-nome-ultimo">GOMES</div>
+              <div class="sticker-cargo">Moderadora de Conteúdo</div>
+            </div>
+
+            <div class="sticker-info">
+              <div class="sticker-info-item">
+                <span class="sticker-info-emoji">🏅</span>
+                <span class="sticker-info-valor">#10</span>
+                <span class="sticker-info-label">Número</span>
+              </div>
+
+              <div class="sticker-info-item">
+                <span class="sticker-info-emoji">🌙</span>
+                <span class="sticker-info-valor">NOITE</span>
+                <span class="sticker-info-label">Turno</span>
+              </div>
+
+              <div class="sticker-info-item">
+                <span class="sticker-info-emoji">👔</span>
+                <span class="sticker-info-valor">MIRIÃ</span>
+                <span class="sticker-info-label">Supervisora</span>
+              </div>
+            </div>
+
+            <div class="sticker-selecao">
+              <span class="sticker-selecao-nome">🇨🇲 CAMARÕES</span>
+            </div>
+
+            <div class="rarity-menu">
+              <div class="rarity-menu-label">TROCAR RARIDADE</div>
+              <div class="rarity-menu-btns">
+                <button class="btn-normal" onclick="trocarRaridade(this,'normal')">⭐ Normal</button>
+                <button class="btn-glitter" onclick="trocarRaridade(this,'glitter')">✨ Glitter</button>
+                <button class="btn-dourada" onclick="trocarRaridade(this,'dourada')">🏆 Dourada</button>
+                <button class="btn-metalizada" onclick="trocarRaridade(this,'metalizada')">💎 Metalizada</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- GUILHERME -->
+        <div class="sticker normal"
+             oncontextmenu="abrirMenuRaridade(event,this)"
+             ontouchstart="segurarFigurinha(this)"
+             ontouchend="cancelarSegurar()">
+          <div class="sticker-inner">
+            <div class="sticker-topo">
+              <div class="sticker-tag-numero">
+                <div class="sticker-raridade-label">⭐ NORMAL</div>
+                <div class="sticker-numero">19</div>
+                <div class="sticker-bandeira">🇨🇲</div>
+              </div>
+              <div class="sticker-escudo">
+                <div class="sticker-escudo-emoji">🦑</div>
+                <div class="sticker-escudo-nome">CAMARÕES</div>
+              </div>
+            </div>
+
+            <div class="sticker-foto">
+              <img src="fotos/IMG_2819.jpg" alt="Guilherme Pires Bocicovar">
+            </div>
+
+            <div class="sticker-nome-area">
+              <div class="sticker-nome-primeiro">GUILHERME</div>
+              <div class="sticker-nome-ultimo">PIRES BOCICOVAR</div>
+              <div class="sticker-cargo">Moderador de Conteúdo</div>
+            </div>
+
+            <div class="sticker-info">
+              <div class="sticker-info-item"><span class="sticker-info-emoji">🏅</span><span class="sticker-info-valor">#19</span><span class="sticker-info-label">Número</span></div>
+              <div class="sticker-info-item"><span class="sticker-info-emoji">🌙</span><span class="sticker-info-valor">NOITE</span><span class="sticker-info-label">Turno</span></div>
+              <div class="sticker-info-item"><span class="sticker-info-emoji">👔</span><span class="sticker-info-valor">MIRIÃ</span><span class="sticker-info-label">Supervisora</span></div>
+            </div>
+
+            <div class="sticker-selecao">
+              <span class="sticker-selecao-nome">🇨🇲 CAMARÕES</span>
+            </div>
+
+            <div class="rarity-menu">
+              <div class="rarity-menu-label">TROCAR RARIDADE</div>
+              <div class="rarity-menu-btns">
+                <button class="btn-normal" onclick="trocarRaridade(this,'normal')">⭐ Normal</button>
+                <button class="btn-glitter" onclick="trocarRaridade(this,'glitter')">✨ Glitter</button>
+                <button class="btn-dourada" onclick="trocarRaridade(this,'dourada')">🏆 Dourada</button>
+                <button class="btn-metalizada" onclick="trocarRaridade(this,'metalizada')">💎 Metalizada</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LEONARDO -->
+        <div class="sticker normal"
+             oncontextmenu="abrirMenuRaridade(event,this)"
+             ontouchstart="segurarFigurinha(this)"
+             ontouchend="cancelarSegurar()">
+          <div class="sticker-inner">
+            <div class="sticker-topo">
+              <div class="sticker-tag-numero">
+                <div class="sticker-raridade-label">⭐ NORMAL</div>
+                <div class="sticker-numero">13</div>
+                <div class="sticker-bandeira">🇨🇲</div>
+              </div>
+              <div class="sticker-escudo"><div class="sticker-escudo-emoji">🦑</div><div class="sticker-escudo-nome">CAMARÕES</div></div>
+            </div>
+
+            <div class="sticker-foto">
+              <img src="fotos/IMG_2820.jpg" alt="Leonardo Pinheiro">
+            </div>
+
+            <div class="sticker-nome-area">
+              <div class="sticker-nome-primeiro">LEONARDO</div>
+              <div class="sticker-nome-ultimo">PINHEIRO</div>
+              <div class="sticker-cargo">Moderador de Conteúdo</div>
+            </div>
+
+            <div class="sticker-info">
+              <div class="sticker-info-item"><span class="sticker-info-emoji">🏅</span><span class="sticker-info-valor">#13</span><span class="sticker-info-label">Número</span></div>
+              <div class="sticker-info-item"><span class="sticker-info-emoji">🌙</span><span class="sticker-info-valor">NOITE</span><span class="sticker-info-label">Turno</span></div>
+              <div class="sticker-info-item"><span class="sticker-info-emoji">👔</span><span class="sticker-info-valor">MIRIÃ</span><span class="sticker-info-label">Supervisora</span></div>
+            </div>
+
+            <div class="sticker-selecao">
+              <span class="sticker-selecao-nome">🇨🇲 CAMARÕES</span>
+            </div>
+
+            <div class="rarity-menu">
+              <div class="rarity-menu-label">TROCAR RARIDADE</div>
+              <div class="rarity-menu-btns">
+                <button class="btn-normal" onclick="trocarRaridade(this,'normal')">⭐ Normal</button>
+                <button class="btn-glitter" onclick="trocarRaridade(this,'glitter')">✨ Glitter</button>
+                <button class="btn-dourada" onclick="trocarRaridade(this,'dourada')">🏆 Dourada</button>
+                <button class="btn-metalizada" onclick="trocarRaridade(this,'metalizada')">💎 Metalizada</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIOGO -->
+        <div class="sticker normal"
+             oncontextmenu="abrirMenuRaridade(event,this)"
+             ontouchstart="segurarFigurinha(this)"
+             ontouchend="cancelarSegurar()">
+          <div class="sticker-inner">
+            <div class="sticker-topo">
+              <div class="sticker-tag-numero">
+                <div class="sticker-raridade-label">⭐ NORMAL</div>
+                <div class="sticker-numero">18</div>
+                <div class="sticker-bandeira">🇨🇲</div>
+              </div>
+              <div class="sticker-escudo"><div class="sticker-escudo-emoji">🦑</div><div class="sticker-escudo-nome">CAMARÕES</div></div>
+            </div>
+
+            <div class="sticker-foto">
+              <img src="fotos/IMG_2821.jpg" alt="Diogo Mendes da Silva">
+            </div>
+
+            <div class="sticker-nome-area">
+              <div class="sticker-nome-primeiro">DIOGO</div>
+              <div class="sticker-nome-ultimo">MENDES DA SILVA</div>
+              <div class="sticker-cargo">Moderador de Conteúdo</div>
+            </div>
+
+            <div class="sticker-info">
+              <div class="sticker-info-item"><span class="sticker-info-emoji">🏅</span><span class="sticker-info-valor">#18</span><span class="sticker-info-label">Número</span></div>
+              <div class="sticker-info-item"><span class="sticker-info-emoji">🌙</span><span class="sticker-info-valor">NOITE</span><span class="sticker-info-label">Turno</span></div>
+              <div class="sticker-info-item"><span class="sticker-info-emoji">👔</span><span class="sticker-info-valor">MIRIÃ</span><span class="sticker-info-label">Supervisora</span></div>
+            </div>
+
+            <div class="sticker-selecao">
+              <span class="sticker-selecao-nome">🇨🇲 CAMARÕES</span>
+            </div>
+
+            <div class="rarity-menu">
+              <div class="rarity-menu-label">TROCAR RARIDADE</div>
+              <div class="rarity-menu-btns">
+                <button class="btn-normal" onclick="trocarRaridade(this,'normal')">⭐ Normal</button>
+                <button class="btn-glitter" onclick="trocarRaridade(this,'glitter')">✨ Glitter</button>
+                <button class="btn-dourada" onclick="trocarRaridade(this,'dourada')">🏆 Dourada</button>
+                <button class="btn-metalizada" onclick="trocarRaridade(this,'metalizada')">💎 Metalizada</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WILSON -->
+        <div class="sticker normal"
+             oncontextmenu="abrirMenuRaridade(event,this)"
+             ontouchstart="segurarFigurinha(this)"
+             ontouchend="cancelarSegurar()">
+          <div class="sticker-inner">
+            <div class="sticker-topo">
+              <div class="sticker-tag-numero">
+                <div class="sticker-raridade-label">⭐ NORMAL</div>
+                <div class="sticker-numero">1</div>
+                <div class="sticker-bandeira">🇨🇲</div>
+              </div>
+              <div class="sticker-escudo"><div class="sticker-escudo-emoji">🦑</div><div class="sticker-escudo-nome">CAMARÕES</div></div>
+            </div>
+
+            <div class="sticker-foto">
+              <img src="fotos/IMG_2822.jpg" alt="Wilson">
+            </div>
+
+            <div class="sticker-nome-area">
+              <div class="sticker-nome-primeiro">WILSON</div>
+              <div class="sticker-nome-ultimo">&nbsp;</div>
+              <div class="sticker-cargo">Moderador de Conteúdo</div>
+            </div>
+
+            <div class="sticker-info">
+              <div class="sticker-info-item"><span class="sticker-info-emoji">🏅</span><span class="sticker-info-valor">#1</span><span class="sticker-info-label">Número</span></div>
+              <div class="sticker-info-item"><span class="sticker-info-emoji">🌙</span><span class="sticker-info-valor">NOITE</span><span class="sticker-info-label">Turno</span></div>
+              <div class="sticker-info-item"><span class="sticker-info-emoji">👔</span><span class="sticker-info-valor">MIRIÃ</span><span class="sticker-info-label">Supervisora</span></div>
+            </div>
+
+            <div class="sticker-selecao">
+              <span class="sticker-selecao-nome">🇨🇲 CAMARÕES</span>
+            </div>
+
+            <div class="rarity-menu">
+              <div class="rarity-menu-label">TROCAR RARIDADE</div>
+              <div class="rarity-menu-btns">
+                <button class="btn-normal" onclick="trocarRaridade(this,'normal')">⭐ Normal</button>
+                <button class="btn-glitter" onclick="trocarRaridade(this,'glitter')">✨ Glitter</button>
+                <button class="btn-dourada" onclick="trocarRaridade(this,'dourada')">🏆 Dourada</button>
+                <button class="btn-metalizada" onclick="trocarRaridade(this,'metalizada')">💎 Metalizada</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BALDINI -->
+        <div class="sticker normal"
+             oncontextmenu="abrirMenuRaridade(event,this)"
+             ontouchstart="segurarFigurinha(this)"
+             ontouchend="cancelarSegurar()">
+          <div class="sticker-inner">
+            <div class="sticker-topo">
+              <div class="sticker-tag-numero">
+                <div class="sticker-raridade-label">⭐ NORMAL</div>
+                <div class="sticker-numero">23</div>
+                <div class="sticker-bandeira">🇨🇲</div>
+              </div>
+              <div class="sticker-escudo"><div class="sticker-escudo-emoji">🦑</div><div class="sticker-escudo-nome">CAMARÕES</div></div>
+            </div>
+
+            <div class="sticker-foto"><img src="fotos/IMG_2823.jpg" alt="Rafael Baldini"></div>
+
+            <div class="sticker-nome-area">
+              <div class="sticker-nome-primeiro">RAFAEL</div>
+              <div class="sticker-nome-ultimo">BALDINI</div>
+              <div class="sticker-cargo">Moderador de Conteúdo</div>
+            </div>
+
+            <div class="sticker-info">
+              <div class="sticker-info-item"><span class="sticker-info-emoji">🏅</span><span class="sticker-info-valor">#23</span><span class="sticker-info-label">Número</span></div>
+              <div class="sticker-info-item"><span class="sticker-info-emoji">🌙</span><span class="sticker-info-valor">NOITE</span><span class="sticker-info-label">Turno</span></div>
+              <div class="sticker-info-item"><span class="sticker-info-emoji">👔</span><span class="sticker-info-valor">MIRIÃ</span><span class="sticker-info-label">Supervisora</span></div>
+            </div>
+
+            <div class="sticker-selecao"><span class="sticker-selecao-nome">🇨🇲 CAMARÕES</span></div>
+
+            <div class="rarity-menu">
+              <div class="rarity-menu-label">TROCAR RARIDADE</div>
+              <div class="rarity-menu-btns">
+                <button class="btn-normal" onclick="trocarRaridade(this,'normal')">⭐ Normal</button>
+                <button class="btn-glitter" onclick="trocarRaridade(this,'glitter')">✨ Glitter</button>
+                <button class="btn-dourada" onclick="trocarRaridade(this,'dourada')">🏆 Dourada</button>
+                <button class="btn-metalizada" onclick="trocarRaridade(this,'metalizada')">💎 Metalizada</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CAIO -->
+        <div class="sticker normal"
+             oncontextmenu="abrirMenuRaridade(event,this)"
+             ontouchstart="segurarFigurinha(this)"
+             ontouchend="cancelarSegurar()">
+          <div class="sticker-inner">
+            <div class="sticker-topo">
+              <div class="sticker-tag-numero">
+                <div class="sticker-raridade-label">⭐ NORMAL</div>
+                <div class="sticker-numero">24</div>
+                <div class="sticker-bandeira">🇨🇲</div>
+              </div>
+              <div class="sticker-escudo"><div class="sticker-escudo-emoji">🦑</div><div class="sticker-escudo-nome">CAMARÕES</div></div>
+            </div>
+
+            <div class="sticker-foto"><img src="fotos/IMG_2824.jpg" alt="Caio"></div>
+
+            <div class="sticker-nome-area">
+              <div class="sticker-nome-primeiro">CAIO</div>
+              <div class="sticker-nome-ultimo">&nbsp;</div>
+              <div class="sticker-cargo">Moderador de Conteúdo</div>
+            </div>
+
+            <div class="sticker-info">
+              <div class="sticker-info-item"><span class="sticker-info-emoji">🏅</span><span class="sticker-info-valor">#24</span><span class="sticker-info-label">Número</span></div>
+              <div class="sticker-info-item"><span class="sticker-info-emoji">🌙</span><span class="sticker-info-valor">NOITE</span><span class="sticker-info-label">Turno</span></div>
+              <div class="sticker-info-item"><span class="sticker-info-emoji">👔</span><span class="sticker-info-valor">MIRIÃ</span><span class="sticker-info-label">Supervisora</span></div>
+            </div>
+
+            <div class="sticker-selecao"><span class="sticker-selecao-nome">🇨🇲 CAMARÕES</span></div>
+
+            <div class="rarity-menu">
+              <div class="rarity-menu-label">TROCAR RARIDADE</div>
+              <div class="rarity-menu-btns">
+                <button class="btn-normal" onclick="trocarRaridade(this,'normal')">⭐ Normal</button>
+                <button class="btn-glitter" onclick="trocarRaridade(this,'glitter')">✨ Glitter</button>
+                <button class="btn-dourada" onclick="trocarRaridade(this,'dourada')">🏆 Dourada</button>
+                <button class="btn-metalizada" onclick="trocarRaridade(this,'metalizada')">💎 Metalizada</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NAIZA -->
+        <div class="sticker normal"
+             oncontextmenu="abrirMenuRaridade(event,this)"
+             ontouchstart="segurarFigurinha(this)"
+             ontouchend="cancelarSegurar()">
+          <div class="sticker-inner">
+            <div class="sticker-topo">
+              <div class="sticker-tag-numero">
+                <div class="sticker-raridade-label">⭐ NORMAL</div>
+                <div class="sticker-numero">6</div>
+                <div class="sticker-bandeira">🇨🇲</div>
+              </div>
+              <div class="sticker-escudo"><div class="sticker-escudo-emoji">🦑</div><div class="sticker-escudo-nome">CAMARÕES</div></div>
+            </div>
+
+            <div class="sticker-foto"><img src="fotos/IMG_2825.jpg" alt="Naiza Rocha"></div>
+
+            <div class="sticker-nome-area">
+              <div class="sticker-nome-primeiro">NAIZA</div>
+              <div class="sticker-nome-ultimo">ROCHA</div>
+              <div class="sticker-cargo">Moderador de Conteúdo</div>
+            </div>
+
+            <div class="sticker-info">
+              <div class="sticker-info-item"><span class="sticker-info-emoji">🏅</span><span class="sticker-info-valor">#6</span><span class="sticker-info-label">Número</span></div>
+              <div class="sticker-info-item"><span class="sticker-info-emoji">🌙</span><span class="sticker-info-valor">NOITE</span><span class="sticker-info-label">Turno</span></div>
+              <div class="sticker-info-item"><span class="sticker-info-emoji">👔</span><span class="sticker-info-valor">MIRIÃ</span><span class="sticker-info-label">Supervisora</span></div>
+            </div>
+
+            <div class="sticker-selecao"><span class="sticker-selecao-nome">🇨🇲 CAMARÕES</span></div>
+
+            <div class="rarity-menu">
+              <div class="rarity-menu-label">TROCAR RARIDADE</div>
+              <div class="rarity-menu-btns">
+                <button class="btn-normal" onclick="trocarRaridade(this,'normal')">⭐ Normal</button>
+                <button class="btn-glitter" onclick="trocarRaridade(this,'glitter')">✨ Glitter</button>
+                <button class="btn-dourada" onclick="trocarRaridade(this,'dourada')">🏆 Dourada</button>
+                <button class="btn-metalizada" onclick="trocarRaridade(this,'metalizada')">💎 Metalizada</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- VICTORIA -->
+        <div class="sticker metalizada"
+             oncontextmenu="abrirMenuRaridade(event,this)"
+             ontouchstart="segurarFigurinha(this)"
+             ontouchend="cancelarSegurar()">
+          <div class="sticker-inner">
+            <div class="sticker-topo">
+              <div class="sticker-tag-numero">
+                <div class="sticker-raridade-label">★<br>METALIZADA</div>
+                <div class="sticker-numero">7</div>
+                <div class="sticker-bandeira">🇨🇲</div>
+              </div>
+              <div class="sticker-escudo"><div class="sticker-escudo-emoji">🦑</div><div class="sticker-escudo-nome">CAMARÕES</div></div>
+            </div>
+
+            <div class="sticker-foto"><img src="fotos/IMG_2828.jpg" alt="Victoria De Melo"></div>
+
+            <div class="sticker-nome-area">
+              <div class="sticker-nome-primeiro">VICTORIA</div>
+              <div class="sticker-nome-ultimo">DE MELO</div>
+              <div class="sticker-cargo">Moderadora de Conteúdo</div>
+            </div>
+
+            <div class="sticker-info">
+              <div class="sticker-info-item"><span class="sticker-info-emoji">🏅</span><span class="sticker-info-valor">#7</span><span class="sticker-info-label">Número</span></div>
+              <div class="sticker-info-item"><span class="sticker-info-emoji">🌙</span><span class="sticker-info-valor">NOITE</span><span class="sticker-info-label">Turno</span></div>
+              <div class="sticker-info-item"><span class="sticker-info-emoji">👔</span><span class="sticker-info-valor">MIRIÃ</span><span class="sticker-info-label">Supervisora</span></div>
+            </div>
+
+            <div class="sticker-selecao"><span class="sticker-selecao-nome">🇨🇲 CAMARÕES</span></div>
+
+            <div class="rarity-menu">
+              <div class="rarity-menu-label">TROCAR RARIDADE</div>
+              <div class="rarity-menu-btns">
+                <button class="btn-normal" onclick="trocarRaridade(this,'normal')">⭐ Normal</button>
+                <button class="btn-glitter" onclick="trocarRaridade(this,'glitter')">✨ Glitter</button>
+                <button class="btn-dourada" onclick="trocarRaridade(this,'dourada')">🏆 Dourada</button>
+                <button class="btn-metalizada" onclick="trocarRaridade(this,'metalizada')">💎 Metalizada</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-
-    <div class="sticker-foto">
-      <img src="fotos/IMG_2817.HEIC" alt="Melissa Gomes">
-    </div>
-
-    <div class="sticker-nome-area">
-      <div class="sticker-nome-primeiro">MELISSA</div>
-      <div class="sticker-nome-ultimo">GOMES</div>
-      <div class="sticker-cargo">Moderadora de Conteúdo</div>
-    </div>
-
-    <div class="sticker-info">
-      <div class="sticker-info-item">
-        <span class="sticker-info-emoji">🏅</span>
-        <span class="sticker-info-valor">#10</span>
-        <span class="sticker-info-label">Número</span>
-      </div>
-
-      <div class="sticker-info-item">
-        <span class="sticker-info-emoji">🌙</span>
-        <span class="sticker-info-valor">NOITE</span>
-        <span class="sticker-info-label">Turno</span>
-      </div>
-
-      <div class="sticker-info-item">
-        <span class="sticker-info-emoji">👔</span>
-        <span class="sticker-info-valor">MIRIÃ</span>
-        <span class="sticker-info-label">Supervisora</span>
-      </div>
-    </div>
-
-    <div class="sticker-selecao">
-      <span class="sticker-selecao-nome">🇨🇲 CAMARÕES</span>
-    </div>
-
-    <div class="rarity-menu">
-      <div class="rarity-menu-label">TROCAR RARIDADE</div>
-
-      <div class="rarity-menu-btns">
-        <button class="btn-normal" onclick="trocarRaridade(this,'normal')">⭐ Normal</button>
-        <button class="btn-glitter" onclick="trocarRaridade(this,'glitter')">✨ Glitter</button>
-        <button class="btn-dourada" onclick="trocarRaridade(this,'dourada')">🏆 Dourada</button>
-        <button class="btn-metalizada" onclick="trocarRaridade(this,'metalizada')">💎 Metalizada</button>
-      </div>
-    </div>
-
   </div>
-</div>
-        
-      </div>
-    </div>
-  </div>
-<!-- GUILHERME -->
-<div class="sticker normal">
-<div class="sticker-inner">
-<div class="sticker-topo">
-<div class="sticker-tag-numero">
-<div class="sticker-raridade-label">⭐ NORMAL</div>
-<div class="sticker-numero">19</div>
-<div class="sticker-bandeira">🇨🇲</div>
-</div>
-<div class="sticker-escudo">
-<div class="sticker-escudo-emoji">🦑</div>
-<div class="sticker-escudo-nome">CAMARÕES</div>
-</div>
-</div>
 
-<div class="sticker-foto">
-<img src="fotos/IMG_2819.HEIC" alt="Guilherme Pires Bocicovar">
-</div>
-
-<div class="sticker-nome-area">
-<div class="sticker-nome-primeiro">GUILHERME</div>
-<div class="sticker-nome-ultimo">PIRES BOCICOVAR</div>
-<div class="sticker-cargo">Moderador de Conteúdo</div>
-</div>
-
-<div class="sticker-info">
-<div class="sticker-info-item"><span class="sticker-info-emoji">🏅</span><span class="sticker-info-valor">#19</span><span class="sticker-info-label">Número</span></div>
-<div class="sticker-info-item"><span class="sticker-info-emoji">🌙</span><span class="sticker-info-valor">NOITE</span><span class="sticker-info-label">Turno</span></div>
-<div class="sticker-info-item"><span class="sticker-info-emoji">👔</span><span class="sticker-info-valor">MIRIÃ</span><span class="sticker-info-label">Supervisora</span></div>
-</div>
-
-<div class="sticker-selecao">
-<span class="sticker-selecao-estrela">✦</span>
-<span class="sticker-selecao-nome">🇨🇲 CAMARÕES</span>
-<span class="sticker-selecao-estrela">✦</span>
-</div>
-</div>
-</div>
-
-<!-- LEONARDO -->
-<div class="sticker normal">
-<div class="sticker-inner">
-<div class="sticker-topo">
-<div class="sticker-tag-numero">
-<div class="sticker-raridade-label">⭐ NORMAL</div>
-<div class="sticker-numero">13</div>
-<div class="sticker-bandeira">🇨🇲</div>
-</div>
-<div class="sticker-escudo"><div class="sticker-escudo-emoji">🦑</div><div class="sticker-escudo-nome">CAMARÕES</div></div>
-</div>
-
-<div class="sticker-foto">
-<img src="fotos/IMG_2820.HEIC" alt="Leonardo Pinheiro">
-</div>
-
-<div class="sticker-nome-area">
-<div class="sticker-nome-primeiro">LEONARDO</div>
-<div class="sticker-nome-ultimo">PINHEIRO</div>
-<div class="sticker-cargo">Moderador de Conteúdo</div>
-</div>
-
-<div class="sticker-info">
-<div class="sticker-info-item"><span class="sticker-info-emoji">🏅</span><span class="sticker-info-valor">#13</span><span class="sticker-info-label">Número</span></div>
-<div class="sticker-info-item"><span class="sticker-info-emoji">🌙</span><span class="sticker-info-valor">NOITE</span><span class="sticker-info-label">Turno</span></div>
-<div class="sticker-info-item"><span class="sticker-info-emoji">👔</span><span class="sticker-info-valor">MIRIÃ</span><span class="sticker-info-label">Supervisora</span></div>
-</div>
-
-<div class="sticker-selecao">
-<span class="sticker-selecao-estrela">✦</span>
-<span class="sticker-selecao-nome">🇨🇲 CAMARÕES</span>
-<span class="sticker-selecao-estrela">✦</span>
-</div>
-</div>
-</div>
-
-<!-- DIOGO -->
-<div class="sticker normal">
-<div class="sticker-inner">
-<div class="sticker-topo">
-<div class="sticker-tag-numero">
-<div class="sticker-raridade-label">⭐ NORMAL</div>
-<div class="sticker-numero">18</div>
-<div class="sticker-bandeira">🇨🇲</div>
-</div>
-<div class="sticker-escudo"><div class="sticker-escudo-emoji">🦑</div><div class="sticker-escudo-nome">CAMARÕES</div></div>
-</div>
-
-<div class="sticker-foto">
-<img src="fotos/IMG_2821.HEIC" alt="Diogo Mendes da Silva">
-</div>
-
-<div class="sticker-nome-area">
-<div class="sticker-nome-primeiro">DIOGO</div>
-<div class="sticker-nome-ultimo">MENDES DA SILVA</div>
-<div class="sticker-cargo">Moderador de Conteúdo</div>
-</div>
-
-<div class="sticker-info">
-<div class="sticker-info-item"><span class="sticker-info-emoji">🏅</span><span class="sticker-info-valor">#18</span><span class="sticker-info-label">Número</span></div>
-<div class="sticker-info-item"><span class="sticker-info-emoji">🌙</span><span class="sticker-info-valor">NOITE</span><span class="sticker-info-label">Turno</span></div>
-<div class="sticker-info-item"><span class="sticker-info-emoji">👔</span><span class="sticker-info-valor">MIRIÃ</span><span class="sticker-info-label">Supervisora</span></div>
-</div>
-
-<div class="sticker-selecao">
-<span class="sticker-selecao-estrela">✦</span>
-<span class="sticker-selecao-nome">🇨🇲 CAMARÕES</span>
-<span class="sticker-selecao-estrela">✦</span>
-</div>
-</div>
-</div>
-
-<!-- WILSON -->
-<div class="sticker normal">
-<div class="sticker-inner">
-<div class="sticker-topo">
-<div class="sticker-tag-numero">
-<div class="sticker-raridade-label">⭐ NORMAL</div>
-<div class="sticker-numero">1</div>
-<div class="sticker-bandeira">🇨🇲</div>
-</div>
-<div class="sticker-escudo"><div class="sticker-escudo-emoji">🦑</div><div class="sticker-escudo-nome">CAMARÕES</div></div>
-</div>
-
-<div class="sticker-foto">
-<img src="fotos/IMG_2822.HEIC" alt="Wilson">
-</div>
-
-<div class="sticker-nome-area">
-<div class="sticker-nome-primeiro">WILSON</div>
-<div class="sticker-nome-ultimo">WILSON</div>
-<div class="sticker-cargo">Moderador de Conteúdo</div>
-</div>
-
-<div class="sticker-info">
-<div class="sticker-info-item"><span class="sticker-info-emoji">🏅</span><span class="sticker-info-valor">#1</span><span class="sticker-info-label">Número</span></div>
-<div class="sticker-info-item"><span class="sticker-info-emoji">🌙</span><span class="sticker-info-valor">NOITE</span><span class="sticker-info-label">Turno</span></div>
-<div class="sticker-info-item"><span class="sticker-info-emoji">👔</span><span class="sticker-info-valor">MIRIÃ</span><span class="sticker-info-label">Supervisora</span></div>
-</div>
-<!-- BALDINI -->
-<div class="sticker normal">
-  <div class="sticker-inner">
-    <div class="sticker-topo">
-      <div class="sticker-tag-numero">
-        <div class="sticker-raridade-label">⭐ NORMAL</div>
-        <div class="sticker-numero">23</div>
-        <div class="sticker-bandeira">🇨🇲</div>
-      </div>
-      <div class="sticker-escudo"><div class="sticker-escudo-emoji">🦑</div><div class="sticker-escudo-nome">CAMARÕES</div></div>
-    </div>
-
-    <div class="sticker-foto"><img src="fotos/IMG_2823.HEIC" alt="Rafael Baldini"></div>
-
-    <div class="sticker-nome-area">
-      <div class="sticker-nome-primeiro">RAFAEL</div>
-      <div class="sticker-nome-ultimo">BALDINI</div>
-      <div class="sticker-cargo">Moderador de Conteúdo</div>
-    </div>
-
-    <div class="sticker-info">
-      <div class="sticker-info-item"><span class="sticker-info-emoji">🏅</span><span class="sticker-info-valor">#23</span><span class="sticker-info-label">Número</span></div>
-      <div class="sticker-info-item"><span class="sticker-info-emoji">🌙</span><span class="sticker-info-valor">NOITE</span><span class="sticker-info-label">Turno</span></div>
-      <div class="sticker-info-item"><span class="sticker-info-emoji">👔</span><span class="sticker-info-valor">MIRIÃ</span><span class="sticker-info-label">Supervisora</span></div>
-    </div>
-
-    <div class="sticker-selecao"><span class="sticker-selecao-estrela">✦</span><span class="sticker-selecao-nome">🇨🇲 CAMARÕES</span><span class="sticker-selecao-estrela">✦</span></div>
-  </div>
-</div>
-
-<!-- CAIO -->
-<div class="sticker normal">
-  <div class="sticker-inner">
-    <div class="sticker-topo">
-      <div class="sticker-tag-numero">
-        <div class="sticker-raridade-label">⭐ NORMAL</div>
-        <div class="sticker-numero">24</div>
-        <div class="sticker-bandeira">🇨🇲</div>
-      </div>
-      <div class="sticker-escudo"><div class="sticker-escudo-emoji">🦑</div><div class="sticker-escudo-nome">CAMARÕES</div></div>
-    </div>
-
-    <div class="sticker-foto"><img src="fotos/IMG_2824.HEIC" alt="Caio"></div>
-
-    <div class="sticker-nome-area">
-      <div class="sticker-nome-primeiro">CAIO</div>
-      <div class="sticker-nome-ultimo">&nbsp;</div>
-      <div class="sticker-cargo">Moderador de Conteúdo</div>
-    </div>
-
-    <div class="sticker-info">
-      <div class="sticker-info-item"><span class="sticker-info-emoji">🏅</span><span class="sticker-info-valor">#24</span><span class="sticker-info-label">Número</span></div>
-      <div class="sticker-info-item"><span class="sticker-info-emoji">🌙</span><span class="sticker-info-valor">NOITE</span><span class="sticker-info-label">Turno</span></div>
-      <div class="sticker-info-item"><span class="sticker-info-emoji">👔</span><span class="sticker-info-valor">MIRIÃ</span><span class="sticker-info-label">Supervisora</span></div>
-    </div>
-
-    <div class="sticker-selecao"><span class="sticker-selecao-estrela">✦</span><span class="sticker-selecao-nome">🇨🇲 CAMARÕES</span><span class="sticker-selecao-estrela">✦</span></div>
-  </div>
-</div>
-
-<!-- NAIZA -->
-<div class="sticker normal">
-  <div class="sticker-inner">
-    <div class="sticker-topo">
-      <div class="sticker-tag-numero">
-        <div class="sticker-raridade-label">⭐ NORMAL</div>
-        <div class="sticker-numero">6</div>
-        <div class="sticker-bandeira">🇨🇲</div>
-      </div>
-      <div class="sticker-escudo"><div class="sticker-escudo-emoji">🦑</div><div class="sticker-escudo-nome">CAMARÕES</div></div>
-    </div>
-
-    <div class="sticker-foto"><img src="fotos/IMG_2825.HEIC" alt="Naiza Rocha"></div>
-
-    <div class="sticker-nome-area">
-      <div class="sticker-nome-primeiro">NAIZA</div>
-      <div class="sticker-nome-ultimo">ROCHA</div>
-      <div class="sticker-cargo">Moderador de Conteúdo</div>
-    </div>
-
-    <div class="sticker-info">
-      <div class="sticker-info-item"><span class="sticker-info-emoji">🏅</span><span class="sticker-info-valor">#6</span><span class="sticker-info-label">Número</span></div>
-      <div class="sticker-info-item"><span class="sticker-info-emoji">🌙</span><span class="sticker-info-valor">NOITE</span><span class="sticker-info-label">Turno</span></div>
-      <div class="sticker-info-item"><span class="sticker-info-emoji">👔</span><span class="sticker-info-valor">MIRIÃ</span><span class="sticker-info-label">Supervisora</span></div>
-    </div>
-
-    <div class="sticker-selecao"><span class="sticker-selecao-estrela">✦</span><span class="sticker-selecao-nome">🇨🇲 CAMARÕES</span><span class="sticker-selecao-estrela">✦</span></div>
-  </div>
-</div>
-
-<!-- VICTORIA -->
-<div class="sticker metalizada">
-  <div class="sticker-inner">
-    <div class="sticker-topo">
-      <div class="sticker-tag-numero">
-        <div class="sticker-raridade-label">★<br>METALIZADA</div>
-        <div class="sticker-numero">7</div>
-        <div class="sticker-bandeira">🇨🇲</div>
-      </div>
-      <div class="sticker-escudo"><div class="sticker-escudo-emoji">🦑</div><div class="sticker-escudo-nome">CAMARÕES</div></div>
-    </div>
-
-    <div class="sticker-foto"><img src="fotos/IMG_2828.HEIC" alt="Victoria De Melo"></div>
-
-    <div class="sticker-nome-area">
-      <div class="sticker-nome-primeiro">VICTORIA</div>
-      <div class="sticker-nome-ultimo">DE MELO</div>
-      <div class="sticker-cargo">Moderadora de Conteúdo</div>
-    </div>
-
-    <div class="sticker-info">
-      <div class="sticker-info-item"><span class="sticker-info-emoji">🏅</span><span class="sticker-info-valor">#7</span><span class="sticker-info-label">Número</span></div>
-      <div class="sticker-info-item"><span class="sticker-info-emoji">🌙</span><span class="sticker-info-valor">NOITE</span><span class="sticker-info-label">Turno</span></div>
-      <div class="sticker-info-item"><span class="sticker-info-emoji">👔</span><span class="sticker-info-valor">MIRIÃ</span><span class="sticker-info-label">Supervisora</span></div>
-    </div>
-
-    <div class="sticker-selecao"><span class="sticker-selecao-estrela">✦</span><span class="sticker-selecao-nome">🇨🇲 CAMARÕES</span><span class="sticker-selecao-estrela">✦</span></div>
-  </div>
-</div>
-<div class="sticker-selecao">
-<span class="sticker-selecao-estrela">✦</span>
-<span class="sticker-selecao-nome">🇨🇲 CAMARÕES</span>
-<span class="sticker-selecao-estrela">✦</span>
-</div>
-</div>
-</div>
   <div id="brasil" class="pagina hidden"><div class="card"><h2>🇧🇷 Brasil</h2><p>🚧 Seleção em preparação.</p></div></div>
   <div id="argentina" class="pagina hidden"><div class="card"><h2>🇦🇷 Argentina</h2><p>🚧 Seleção em preparação.</p></div></div>
   <div id="franca" class="pagina hidden"><div class="card"><h2>🇫🇷 França</h2><p>🚧 Seleção em preparação.</p></div></div>
