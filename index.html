@@ -593,7 +593,62 @@ h1{
 .btn-glitter{background:#700090}
 .btn-dourada{background:#6a4200}
 .btn-metalizada{background:#2d0850}
+.staff-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
 
+.staff-card{
+  position:relative;
+  overflow:hidden;
+}
+
+.staff-foto{
+  width:100%;
+  height:220px;
+  border-radius:20px;
+  overflow:hidden;
+  border:2px solid rgba(255,245,160,.65);
+  margin-bottom:18px;
+}
+
+.staff-foto img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 20%;
+  display:block;
+}
+
+.sticker{
+  transition:transform .22s ease, box-shadow .22s ease;
+}
+
+.sticker:hover{
+  transform:translateY(-6px) scale(1.015);
+  box-shadow:
+    0 0 38px rgba(201,162,39,.65),
+    0 28px 70px rgba(0,0,0,.58);
+}
+
+.sticker.metalizada .sticker-inner::before,
+.sticker.glitter .sticker-inner::before,
+.sticker.dourada .sticker-inner::before{
+  content:"";
+  position:absolute;
+  inset:-30%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.24),transparent);
+  transform:rotate(20deg);
+  animation:stickerShine 3.8s ease-in-out infinite;
+  pointer-events:none;
+  z-index:3;
+}
+
+@keyframes stickerShine{
+  from{transform:translateX(-45%) rotate(20deg)}
+  to{transform:translateX(45%) rotate(20deg)}
+}
 .rarity-menu-fechar{
   position:absolute;
   top:12px;
@@ -678,41 +733,81 @@ h1{
     </div>
   </div>
 <div id="supervisores" class="pagina hidden">
-  <div class="card staff">
+  <div class="card staff-card">
     <div class="staff-badge">👑 STAFF ESPECIAL</div>
+    <div class="staff-foto">
+      <img src="fotos/IMG_MIRIA.HEIC" alt="Miriã Ourique">
+    </div>
     <div class="kicker">Supervisora</div>
     <h2>👔 Miriã Ourique</h2>
     <p>Carta especial da comissão técnica de Camarões.</p>
   </div>
 </div>
-  <div id="coordenadores" class="pagina hidden">
-    <div class="card"><div class="kicker">VAR</div><h2>🎯 Coordenadores</h2><p>Responsáveis por escalar craques, administrar crises e tomar decisões críticas durante o campeonato.</p></div>
-  </div>
 
+<div id="coordenadores" class="pagina hidden">
+  <div class="card staff-card">
+    <div class="staff-badge">🎯 STAFF ESPECIAL</div>
+    <div class="staff-foto">
+      <img src="fotos/IMG_ANA.HEIC" alt="Ana Luiza Mendes">
+    </div>
+    <div class="kicker">Coordenadora</div>
+    <h2>🎯 Ana Luiza Mendes</h2>
+    <p>Carta especial de coordenação da seleção de Camarões.</p>
+  </div>
+</div>
   <div id="gerencia" class="pagina hidden">
     <div class="card"><div class="kicker">Juiz principal</div><h2>⚖️ Gerência</h2><p>Aquele que tudo sabe e tudo vê.</p></div>
   </div>
 
-  <div id="camaroes" class="pagina hidden">
-    <div class="card">
-      <div class="kicker">Seleção oficial</div>
-      <h2>CAMARÕES</h2>
-      <p>Primeira seleção oficialmente cadastrada no Mundial dos KPIs.</p>
+<div class="staff-grid">
+
+  <div class="card staff-card">
+    <div class="staff-badge">👑 STAFF ESPECIAL</div>
+
+    <div class="staff-foto">
+      <img src="fotos/IMG_2827.HEIC" alt="Miriã Ourique">
     </div>
 
-   <div class="card staff">
-  <div class="staff-badge">👑 STAFF ESPECIAL</div>
-  <div class="kicker">Supervisora</div>
-  <h2>👔 Miriã Ourique</h2>
-  <p>Carta especial da comissão técnica de Camarões.</p>
+    <div class="kicker">Supervisora</div>
+
+    <h2>👔 Miriã Ourique</h2>
+
+    <p>
+      Estrategista principal da Seleção de Camarões e responsável por liderar
+      a equipe rumo ao título do Mundial dos KPIs.
+    </p>
+  </div>
+
+  <div class="card staff-card">
+    <div class="staff-badge">🎯 STAFF ESPECIAL</div>
+
+    <div class="staff-foto">
+      <img src="fotos/PHOTO-2026-06-01-06-03-09.jpg" alt="Ana Luiza Mendes">
+    </div>
+
+    <div class="kicker">Coordenadora</div>
+
+    <h2>🎯 Ana Luiza Mendes</h2>
+
+    <p>
+      Responsável pelas estratégias, decisões críticas e suporte operacional
+      da Seleção de Camarões durante toda a competição.
+    </p>
+  </div>
+
 </div>
 
-    <div class="card staff">
-      <div class="staff-badge">🎯 STAFF ESPECIAL</div>
-      <div class="kicker">Coordenadora</div>
-      <h2>🎯 Ana Luiza Mendes</h2>
-      <p>Carta especial de coordenação da seleção de Camarões.</p>
+  <div class="card staff-card">
+    <div class="staff-badge">🎯 STAFF ESPECIAL</div>
+    <div class="staff-foto">
+      <img src="fotos/IMG_ANA.HEIC" alt="Ana Luiza Mendes">
     </div>
+    <div class="kicker">Coordenadora</div>
+    <h2>🎯 Ana Luiza Mendes</h2>
+    <p>Carta especial de coordenação da seleção de Camarões.</p>
+  </div>
+
+</div>
 
     <div class="card">
       <div class="kicker">Álbum</div>
