@@ -603,6 +603,7 @@ h1{
   position:relative;
   overflow:hidden;
 }
+
 .staff-card.lendaria{
   border:2px solid rgba(255,245,160,.75);
   background:
@@ -612,16 +613,8 @@ h1{
   box-shadow:
     0 0 32px rgba(201,162,39,.45),
     0 18px 50px rgba(0,0,0,.45);
-  .staff-card.lendaria{
   animation:flutuarLendaria 4s ease-in-out infinite;
 }
-
-@keyframes flutuarLendaria{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-6px)}
-  100%{transform:translateY(0)}
-}
-
 .staff-card.lendaria::before{
   content:"";
   position:absolute;
@@ -831,7 +824,7 @@ letter-spacing:2px;
       <button class="navBtn" onclick="mostrar('coreia')">🇰🇷 Coreia</button>
       <button class="navBtn" onclick="mostrar('eua')">🇺🇸 EUA</button>
     </div>
-  </div>
+
 
   <div id="chaveamento" class="pagina">
     <div class="card">
@@ -870,7 +863,6 @@ letter-spacing:2px;
 </div>
   <div id="gerencia" class="pagina hidden">
     <div class="card"><div class="kicker">Juiz principal</div><h2>⚖️ Gerência</h2><p>Aquele que tudo sabe e tudo vê.</p></div>
-  </div>
 <div id="camaroes" class="pagina hidden">
 
   <div class="card">
@@ -916,8 +908,6 @@ letter-spacing:2px;
 
 </div>
 
-</div>
-
     <div class="card">
       <div class="kicker">Álbum</div>
       <h2>📖 Figurinhas de Camarões</h2>
@@ -935,7 +925,7 @@ letter-spacing:2px;
               </div>
               <div class="sticker-escudo">
                 <div class="sticker-escudo-emoji">🦑</div>
-                <div class="sticker-escudo-nome"><h2>🇨🇲 Camarões</h2></div>
+                <div class="sticker-escudo-nome">CAMARÕES</div>
               </div>
             </div>
             <div class="sticker-foto">
@@ -978,7 +968,7 @@ letter-spacing:2px;
               </div>
               <div class="sticker-escudo"><div class="sticker-escudo-emoji">🦑</div><div class="sticker-escudo-nome">Camarões</div></div>
             </div>
-            <div class="sticker-foto"><img src="fotos/IMG_2819.HEIC" alt="Guilherme Pires Bocicovar">cm</div>
+           <div class="sticker-foto"><img src="fotos/IMG_2819.HEIC" alt="Guilherme Pires Bocicovar"></div>
             <div class="sticker-nome-area">
               <div class="sticker-nome-primeiro">GUILHERME</div>
               <div class="sticker-nome-ultimo">PIRES BOCICOVAR</div>
@@ -1011,7 +1001,7 @@ letter-spacing:2px;
               <div class="sticker-tag-numero">
                 <div class="sticker-raridade-label">⭐ NORMAL</div>
                 <div class="sticker-numero">13</div>
-                <div class="sticker-bandeira"</div>
+              <div class="sticker-bandeira">🇨🇲</div>
               </div>
               <div class="sticker-escudo"><div class="sticker-escudo-emoji">🦑</div><div class="sticker-escudo-nome">Camarões</div></div>
             </div>
